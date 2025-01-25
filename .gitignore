@@ -1,3 +1,4 @@
 .env
 *.mp4
 *.webm
+.venv

@@ -1,0 +1,2 @@
+[console_scripts]
+denoise = pyrnnoise.cli:main

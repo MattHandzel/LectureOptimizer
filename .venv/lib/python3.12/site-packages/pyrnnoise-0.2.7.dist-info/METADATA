@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: pyrnnoise
+Version: 0.2.7
+Summary: PyRnNoise
+Home-page: https://github.com/pengzhendong/pyrnnoise
+Author: Zhendong Peng
+Author-email: pzd17@tsinghua.org.cn
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: soundfile
+Requires-Dist: soxr
+Requires-Dist: tqdm
+
+# pyrnnoise
+
+```bash
+$ pip install pyrnnoise
+$ denoise in.wav out.wav --plot
+```
+
+## Build
+
+``` bash
+$ git submodule update --init
+$ cmake -B pyrnnoise/build -DCMAKE_BUILD_TYPE=Release
+$ cmake --build pyrnnoise/build --target install
+```

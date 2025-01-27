@@ -2,3 +2,16 @@
 *.mp4
 *.webm
 .venv
+*.json
+open-voice
+openvoice
+*.tsv
+*.srt
+*.vtt
+*.txt
+processed
+*.wav
+*.mp3
+checkpoints
+checkpoints*
+MeloTTS

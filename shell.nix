@@ -3,26 +3,30 @@
 with pkgs;
   mkShell {
     buildInputs = with python312Packages;
-      [virtualenv qdrant-client python-dotenv flask openai-whisper ffmpeg-python yt-dlp pydub pyannote-audio opencv-python sentence-transformers scikit-learn numpy matplotlib tqdm soundfile librosa]
+      [virtualenv qdrant-client python-dotenv flask openai-whisper ffmpeg-python yt-dlp pydub pyannote-audio opencv-python sentence-transformers scikit-learn numpy matplotlib tqdm soundfile librosa pytesseract torch torchvision]
       ++ [
         python312
+        libgcc.lib
+mecab # needed for MeloTTS
         # ollama
         # python312Packages.ollama
 
-        docker
-        docker-compose
+        # docker
+        # docker-compose
       ];
 
     shellHook = ''
-       if ! [ -e .venv ]; then
-         python3 -m venv .venv
-         pip install python-frontmatter anki
-       fi
-      source .venv/bin/activate
+
+      export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath [pkgs.libgcc.lib]}:$LD_LIBRARY_PATH
+             if ! [ -e .venv ]; then
+               python3 -m venv .venv
+               pip install python-frontmatter anki
+             fi
+            source .venv/bin/activate
 
 
-      # export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
-      # ollama serve > /dev/null 2>&1 &
-      #
+            # export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+            # ollama serve > /dev/null 2>&1 &
+            #
     '';
   }

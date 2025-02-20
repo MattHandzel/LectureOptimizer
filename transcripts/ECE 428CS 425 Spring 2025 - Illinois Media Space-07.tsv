@@ -1,0 +1,1276 @@
+start	end	text
+0	340	Thank you.
+40120	41960	All right everyone, let us get started.
+44120	49740	Ok, so just a quick reminder like a homework 1 is due on Friday and homework 2 will also
+49740	51040	be released on the same day.
+51840	57800	Also I have posted some notes about midterm 1 on campus wire, so please make sure you take
+57800	58680	a look at that post.
+58680	64860	So, in particular it is your midterm your first midterm is the time range March 4th to March
+64860	65120	6th.
+65240	71220	So, you can pick like any available slots on CBTF in this time range for your midterm and
+71220	73040	the reservation will start tomorrow.
+73240	77120	So, like tomorrow onwards you could like reserve a slot on on prairie test.
+77780	81840	And your syllabus will include everything up to and including global states.
+81840	87440	So, basically like up to like what the portion covered as part of homework 1.
+87440	89480	And yeah.
+91100	95020	So, Balticat onwards is not part of the midterm and syllabus.
+96180	99280	And just a quick note that CBTF does not allow cheat sheets.
+99420	103680	I would have liked you all to have the option of making your own cheat sheets.
+103680	105960	But CBTF does not support that option.
+106340	111920	So, we will provide an abridged version of the slides as a reference cheat sheet during
+111920	112400	the exam.
+112400	117000	And this cheat sheet has been linked to my campus via post as well for prior reference.
+117620	122280	And as also in my post, make sure that you study well for the exam and you don't just
+122280	123260	rely on the cheat sheet.
+123460	126700	It's something I discussed during the first lecture itself.
+128080	131940	If like the cheat sheet is just for like you know quick reference or maybe like some formula.
+132040	136500	Like just to kind of avoid memorizing stiff stuff.
+136800	141360	Like but you need to make sure that you know all the concepts well.
+141760	145260	And they cannot just like you know you basically it's a 50 minute long exam.
+145380	149280	So, you won't have time to like you know just go and refer to the cheat sheet for each
+149280	150100	and every little thing.
+151280	152320	It's a pretty long.
+152480	154480	The cheat sheet just basically covers all the slides.
+154480	160100	So, if you rely on referring too much to the cheat sheet during the exam you may not have
+160100	160920	enough time for that.
+161100	162660	So, make sure you study well.
+162760	163800	You know the concepts well.
+164080	167760	Also the exam questions will not just be like direct application of the formula that
+167760	168700	is written in the cheat sheet.
+168860	171540	It will require you to have a good understanding of the concept.
+171740	176360	So, in the past I've seen that like, something I was also mentioning last time.
+176440	182520	So like last year actually the average score on my exams for similar difficulty level were
+182520	184040	lower than what they were the year before.
+184140	187900	So, the year before I didn't have any cheat sheet and it was a few bit lower last time.
+188020	191960	So, I felt that you know people might have fallen into the trap of relying too much on the cheat
+191960	192280	sheet.
+193280	195740	So, please don't fall into that trap.
+199340	205820	CBTF will provide scratch papers and calculators and please make sure you check out all of the
+205820	206660	CBTF rules.
+206880	208920	They have been linked on my campus via post.
+209380	210360	Any questions?
+210360	210660	Yeah.
+216720	220740	So, homework one might not be graded before the exam, but we will release the solution
+220740	221920	once we're done with the deadline.
+222260	222700	Yeah.
+223200	223960	Any other questions?
+235320	242420	If you're working on MP0 grading, it may not be done by today as promised by Marcel, but
+242420	243280	it will be done soon.
+243880	247020	I mean, if you know your MP0 works, it works, right?
+247100	251440	You don't need to have the MP0 graded to start working on MP1 if that's what you're worried
+253100	253460	about.
+253540	254300	Yeah, yeah, yeah.
+254520	258880	I think there was a campus via post saying that there is some, might have created some
+258880	263140	mental dependency between MP0 and MP1, but if you know your MP0 works, you're able to
+263140	266860	kind of see all the logs in the centralized logger, you know it works, right?
+267040	271380	So, yeah, you should be able to start working on MP1 irrespective of when you finish grading
+271380	271900	MP0.
+272320	276820	Grading may take some time because we'll be running your code on our cluster and making sure
+276820	278060	that everything works.
+278280	280440	So, yeah, it's not an instantaneous activity.
+285240	285700	Okay.
+286440	288340	Did my microphone stop working?
+289000	290580	You can hear me at the back, right?
+291340	291800	Yeah.
+292060	292680	Okay, I have a question.
+294800	296940	No, I announced this in the very first class.
+297080	300680	There won't be any practice exam because, again, people fall into the trap of assuming
+300680	305740	that whatever practice questions I've given are a template for the actual questions which
+305740	308480	won't be the case and homeworks are there for practice.
+309160	313780	The homework one, I am making sure that all of the materials covered as part of homework
+313780	315780	one are the ones that you've been quizzed on.
+315880	318960	I'm not including multicast in the midterm exam for that reason.
+319820	319880	Yeah.
+319880	322480	What part of homework two will be on the exam?
+322760	323740	Nothing, nothing.
+324020	325580	This is just what I said, right?
+326700	331080	Multicast onwards is not in the, actually, okay, you don't know that, okay, homework two,
+332180	335440	okay, global states has been covered as part of homework one.
+335440	338160	Homework two will be multicast onwards.
+338700	341760	Multicast onwards will not be part of your exam, okay?
+349960	350560	Yeah.
+351420	357760	Yeah, so Feb 12 is basically was the last, Feb 12 was when I finished the discussion of
+357760	358320	global states.
+358920	359500	Yeah.
+360320	361420	That's, yeah.
+361840	362680	Before that, yeah.
+363100	363220	Yeah.
+363220	365160	Refer to my campus via post.
+365940	366380	Yeah.
+367000	367240	Okay.
+368100	368760	All right.
+368880	369800	Any other questions?
+373000	373440	Okay.
+376440	377020	All right.
+377300	380500	So let's move on with our main technical agenda for today.
+380580	383260	So we are going to continue discussion of multicast.
+383440	387160	You can hear me at the back, right, because I felt that my microphone just stopped working,
+387200	389360	but as long as you all can hear me, it's good.
+389460	389620	Okay.
+390480	393980	So yeah, we are going to continue discussion of multicast and then if time we are going
+393980	395760	to start mutual exclusion.
+396880	397320	Okay.
+397480	399220	So just a quick recap of multicast.
+399440	403440	So we discussed how it's a useful communication mode in the systems.
+404580	409980	We use multicast for writing objects across replica servers, for group messaging, even as
+409980	416660	part of some of the algorithms we have discussed like centralized heartbeats and sending markers
+416660	417920	with Chandy Lambert and so on.
+419860	429040	So the very basic multicast protocol just simply involves the sending process, unicasting the
+429040	434000	message to each process in the multicast group, but this does not guarantee consistent message
+434000	434460	delivery.
+434460	438480	Similarly, if the sender fails you could it could be it could happen that subset of the
+438480	441820	processes receive the message and another subset does not.
+443020	448640	So, based on that we define the notion of a reliable multicast which is defined by three
+448640	450800	properties integrity, validity and agreement.
+451460	457300	And the key thing here is that if some correct process multicast the message M, then all correct
+457300	459500	processes deliver M exactly once.
+459500	464020	And the way to achieve that is that when a process receives the message M for the first
+464020	467700	time, it remulticasts again to other processes in the group.
+469680	470160	Okay.
+470440	474960	So, these were like sort of the basic multicast and reliable multicast for like two flavors
+475500	477320	with different levels of consistency.
+477700	484400	But then we also have different ordering flavors, pipe order, causal order, total order.
+493280	495620	Any questions on that?
+509260	509820	Okay.
+510220	514380	So, we are already discussed how to implement a pipe, how to implement PIFO.
+514380	514380	
+516020	523600	So, the basic idea is that each process maintains a counter of how many multicast it has issued
+523600	529980	and receiving process make sure that whatever multicast it receives from some other process.
+530060	533200	PIFO is indeed the next multicast expecting from PIFO.
+533240	536420	So, that's where that is basically in sequence numbers.
+537180	544580	Then we started discussing total order multicast and the idea is similar except that instead
+544580	549220	of each sender individually maintaining a counter of the multicast it has issued.
+549400	553920	We maintain a global sequence counter across all messages that are issued in the system.
+554940	562480	And one way to do that is by using a centralized sequencer that creates a total order across all of the multicast.
+562680	568640	So, all all all processes when they show multicast they also send the message to the sequencer
+568640	572660	and the sequencer will assign a sequence number to that multicast.
+572860	578800	And then each process ensures that they are delivering the messages in the order of the sequence number.
+580360	586560	So, one issue with a centralized sequencer based approach is a centralized sequencer would fail
+586560	591020	and then your system would have to have some kind of a failure detection mechanism to detect that
+591020	594760	elect a new sequencer and that might like at times complicate things.
+595180	602460	So, we often also think about a decentralized mechanism and that's where we almost ended.
+602620	604940	So, we had just touched upon this ISIS mechanism.
+604940	609500	So, let me let me dive into that in more details.
+610580	616680	So, what we discussed was basically how this ISIS algorithm involves three steps.
+616960	624320	So, any time a process issues a multicast it will basically send send that message to all
+624320	626160	of the other processes including itself.
+628000	634320	And then each process will propose a sequence number for that message.
+635520	640560	And this this this this proposed sequence number will basically send it back to the sender.
+640780	647720	And the sender will pick the highest of these proposed sequence numbers as the final sequence
+651940	652500	number.
+652500	652500	
+654960	661160	And the key lies in like basically the logic used in proposing and proposing the sequence number
+661160	663220	and picking that final sequence number.
+663480	668080	We all like we can refer to these sequence numbers also as priority because we are maintaining
+668080	670320	a priority queue of messages based on these numbers.
+670920	675100	So, the first step is send a multicast the message to everyone and the receiving processes
+675100	677700	reply with the proposed priority or sequence number.
+677940	683700	So, this must be larger than all observed agreed upon priority values and it's larger than
+683700	686880	any previously proposed priority value.
+688480	693520	And then the message is stored in a priority queue which is ordered by the priority.
+693840	699800	The priority here could be the proposed or the agreed upon priority and the message is marked
+699800	700640	as undeliverable.
+700920	712160	So, then the sender chooses an agreed upon chooses an agreed priority final priority for that for that
+712160	716580	message once it receives these proposed priorities from all of the processes.
+717400	725980	And this agreed priority is the maximum of all proposed priorities and it's sent back to
+725980	726660	all the processes.
+727280	734420	And when a process receives this agreed upon the final priority for a message M, it updates
+735160	741720	this message M's priority and accordingly it reorders the message in the priority queue and it marks
+741720	749420	this message M's deliverable and it then ends up delivering any messages that are at the front
+749420	751440	of the priority queue, ok.
+751660	758400	So, let me just dive into an example and this will probably become clearer and then I can
+758400	762300	come back to the slide and if you have any questions we can tackle those, ok.
+763360	765280	So, let us let us start with this example.
+765300	767560	So, I have these three processes P 1, P 2, P 3.
+768360	774360	So, suppose P 1 issues a multicast of let us say this message A, ok.
+774600	777900	So, the first step is that P 1 itself will propose a priority for A, right.
+778000	782060	So, this prior, so let us say that there were no other multicast messages issued before.
+782380	784680	So, it starts with priority 1.
+785000	788760	So, that is the highest so far, ok.
+800100	813940	So, now let us say B's multicast message reaches P 2.
+814220	815980	So, what will P 2 do?
+822080	822620	No.
+822620	822780	No.
+823640	825480	This is not reliable multicast.
+826080	830920	We are just, we are just doing basic multicast but we are now trying to implement the ICES
+830920	833580	algorithm for ensuring total reliability.
+834260	834400	Oops.
+834800	836180	Ok, my, ok.
+836180	840100	I thought I had removed all this automated timing from these animations.
+840240	843680	There are lots of animations in these slides which are hard to debug and the other problem
+843680	845460	is I cannot do back, ok.
+845600	846500	What will P 2 do?
+849080	849520	Yeah.
+851720	853300	I will propose sequence number 1.
+853440	858460	So, P 2 will see that hey you know I have not proposed any other priorities.
+858460	862320	So, I will let me start with like you know the small smallest priority 1, it is smallest
+862320	863160	is 1 and not 0.
+863420	865820	It could be the things, ok.
+865940	872540	So, P 2 will propose a priority 1 for this message B and it will send that proposal back
+872540	874700	to P 3, ok.
+876140	882400	So, P 3 has received this proposed priority from P 2, but it is still waiting on receiving
+882400	884040	the proposed priority from P 1.
+884040	889120	So, you agree upon a final priority value only after you have received the proposed priority
+889120	890640	from all three processes, right.
+890780	896900	So, P 3 basically knows that, ok, P 3 and P 2 have both proposed priority 1 for this message
+896900	900160	B, but P 1's proposal is still left, ok.
+900280	903180	So, we cannot proceed with delivering B anywhere.
+903340	907940	So, B is still undeliverable, ok.
+907940	915080	Then when P 1's message A reaches P 2, what will P 2 do?
+919380	921360	Yeah, reply back 2, right.
+921800	925980	So, now P 2 will say that, ok, you know I have received the second multicast message
+925980	932240	and I have already proposed a priority 1 for the message B. So, for this second message
+932240	935540	that I have, I am receiving, let me propose a priority 2.
+935720	939700	So, remember the proposed priority that, the priority that you propose for a message is
+939700	943740	always higher than your previously proposed values, ok.
+944740	945260	Alright.
+945260	950160	So, now basically now this message is then sent back to P 1.
+950340	955760	And now let's suppose P 1's message reaches P 3.
+956300	961620	So, P 3 will also propose a, ah, ok.
+963300	968920	So, it's hard to debug these animations when I am like walking over the slides on my own
+968920	971060	because I, like the timings are always different.
+971060	971460	Anyways.
+971680	979380	So, P 3 will also propose a priority 2 because P 3 has proposed priority 1 for message B.
+979440	983920	So, P 3 will also propose a priority 2 for this message A and it will send back a response
+983920	986220	to P 1, ok.
+986260	993920	But before that response reaches P 1, let's say P 2 ends up issuing another multicast C, ok.
+995200	1003740	So, now P 2 will end up proposing a priority 3 for this multicast C because it has already
+1003740	1009620	proposed priority 1 for B and it has proposed priority 2 for A. So, the next higher value
+1009620	1010100	is 3.
+1010400	1020960	So, P 2 will propose priority 3 for this multicast C. And, ah, and this message reaches P 1.
+1020960	1026020	So, what will P 1 now propose for C? 2, right.
+1026600	1035200	So, P 1 has proposed 1 for A. So, it will propose the next higher value 2 for C. And, what will
+1035200	1039560	P 3 propose for C? 3, right.
+1039560	1039560	
+1039640	1039780	.
+1039780	1043080	So, P 3 has, has seen priorities 1 and 2 before.
+1043260	1044700	It has proposed priorities 1 and 2 before.
+1044940	1048840	So, it will propose 3 for C, alright.
+1049160	1053820	So, now P1's proposal for C has reached P 2.
+1054020	1059100	P 2 will still not do anything little with sitting on P 3's proposed, proposed value,
+1060600	1061060	ok.
+1061060	1065640	So, now finally P3's message B reaches P1.
+1067620	1075540	What will P1 propose as B's priority, 3, good, okay, all right.
+1076200	1087580	And then A's proposed priority 2 by P3, so P3 had proposed priority 2 for A, so that
+1087580	1088880	proposal reaches P1.
+1088880	1090640	So, now what will happen?
+1091100	1096840	So, now we see that at P1 we have the proposed priority for A from all 3 messages.
+1097160	1106260	So, we have the proposed priority of 1 from P1, proposed priority of 2 from P2 and proposed
+1106260	1108400	priority of 2 from P3, okay.
+1108580	1115080	So, now P1 is ready to figure out what should be the final priority of A. So, what will it
+1115080	1116900	pick as the final priority of A?
+1118440	1119060	2, right.
+1119140	1124200	It will take the max of all of these proposed values and it will pick 2 to be the final priority
+1124200	1126120	of A, okay.
+1126200	1129620	And then it will update this priority value to 2.
+1130940	1133920	And it will mark this A as deliverable.
+1134020	1138820	So, this color change indicates if a non-gray color here indicates that it is deliverable.
+1139020	1140440	But there's a problem now, right.
+1140620	1145620	So, we now need to sort these messages by the order of the priority.
+1145620	1153020	And we now see two messages in in P1's queue, which both of which have priority 2.
+1153540	1155040	So, how do we go about it?
+1157380	1161320	Can you just like deliver any of them in any order?
+1162060	1167060	Let's assume like C is C is not deliverable yet, but suppose C became deliverable with
+1167060	1167680	a priority 2.
+1167680	1172800	So, could we have delivered it in that order, in any random order across processes?
+1178380	1181480	It, the third priority value could, could end up.
+1186560	1190800	Once it becomes deliverable, could both end up with two, ah.
+1197020	1197420	Yeah.
+1198720	1199720	Actually, it's a good question.
+1199820	1201340	I need to think a little bit more about it.
+1201440	1202640	Maybe, maybe it won't.
+1202780	1208540	But we still need a way to, to even, even locally, like even at this time instance, like
+1208540	1211280	whether A, whether A can be delivered or not.
+1211280	1223660	Because we don't know whether, actually yeah, so C, in this case C's priority will end
+1223660	1232140	up being higher, but if A is currently deliverable, I'll actually have to have to think a little
+1232140	1233140	bit more about it and get back.
+1233220	1239040	Like if, if we can actually prove that eventually like they will end up being, being different.
+1239040	1243500	But there, there is a, that's the key though, like you know there is, there is like a reason
+1243500	1249480	why they might like end up being different and we can use that to even at this point like
+1249480	1251140	order these messages.
+1251260	1254800	So, I think, okay let me, let me, let me, let me, let me, let me, let me, so in, in this
+1254800	1260900	particular case, yes C's priority will end up eventually being different and it might
+1260900	1268760	have been safe to deliver A maybe, actually no, yeah, yeah, it might have been safe to
+1268760	1279960	deliver A, but, oh, okay my microphone, yeah, okay, but there could be other cases where
+1279960	1285540	like let's say A2 is still the proposed priority, like A2 and C2 are still the proposed priority,
+1285540	1289600	we might still want to order them in some way at, at our queue.
+1289740	1290680	So how do we do that?
+1290800	1296280	And we can leverage the fact that there is some process which will, which will be able
+1296280	1298080	to distinguish between, between the priorities.
+1298080	1308740	So the, the way we do that is that we break ties using the, using the, the process ID of the,
+1309600	1314280	using the ID of the process that has suggested that, that highest priority value.
+1314640	1315120	Okay?
+1316200	1320320	So, you see whenever we implement a priority queue like we, we, we need unique priorities.
+1320600	1324480	So, if you have a priority queue and you have the same priority and you end up like sort
+1324480	1328660	of ordering them in a random order like sort of safe, safe safety could be violated like
+1328660	1331000	you might end up breaking total order.
+1331300	1335960	I do need to actually think about whether after the final priorities are decided like could
+1335960	1338320	you, could that ever happen if we don't end up breaking ties.
+1341020	1347860	So the way, the way we, we do that like just as like, you know, an added like safety sort
+1347860	1354540	of cautious mechanism conservative, conservatively is that the process number, the, the process,
+1354780	1360000	the ID of the process that has suggested the, the priority is appended to this priority value.
+1360400	1361020	Okay?
+1361200	1368900	So here three dot two means that process two has proposed priority three for that, for that
+1368900	1369960	message.
+1370700	1373560	And no, no the dot here is not a decimal point.
+1373720	1376340	Like people get confused that this is like a decimal point.
+1376340	1376800	No, no, no.
+1377100	1382100	So the way to compare that is that you first look at the, at, oops.
+1382420	1384360	You first look at the priority value.
+1384520	1389260	If the priority value is higher then that message should come, basically this 2.1 should
+1389260	1391420	come after 1.3 in the priority queue.
+1391940	1397180	But if the, if the priority value is the same then you look at the process ID and you order
+1397180	1399740	the, the, the messages based on that.
+1399960	1400340	Okay?
+1401880	1403380	So any questions on this?
+1406740	1407220	Okay.
+1408140	1413500	So now, so now what we do here is so, now if we come back to our example here.
+1413760	1423100	So, so far we just have these, the, the, these, these proposals based on, based on the,
+1423100	1427860	whichever, whichever, whichever process proposed the highest value we, that that process ID
+1427860	1433380	has been appended to that, to that, to that priority that each process locally maintaining.
+1434440	1449080	Then when P1 receives this proposed priority of 3 from, from P3, it will end up updating this
+1449080	1450220	to 2.3.
+1450220	1452340	It will mark it as deliverable.
+1452500	1461440	But because 2.3 is higher than 2.1, it will order the, the messages in this manner.
+1462420	1462440	Okay?
+1464980	1465700	Right?
+1467300	1473300	Because here like basically P1 at this point does not know whether other processes will end
+1473300	1475440	up proposing a higher priority for C or not.
+1475700	1482140	So, it, it may not be safe to deliver A, but maybe, maybe, maybe it would have been, I'm
+1482140	1483340	to work out that proof.
+1483520	1484340	You had a question?
+1484620	1484680	Yeah.
+1485540	1485940	You had a question?
+1488780	1489180	Yeah.
+1489180	1490120	Other process as in?
+1496560	1501660	Yeah, we, so now the agreed, so this is just P1 setting the agreed priority value.
+1501900	1504120	But now it will send it to these other processes.
+1504360	1506240	So that was the next step in, in this.
+1506500	1506980	Okay?
+1507060	1509980	So now these other processes will receive this agreed upon value.
+1510240	1514980	And they'll also update the, the priority to 2.3.
+1514980	1520140	And they will adjust their, the position of, of A in their priority values.
+1520780	1520820	Okay?
+1521100	1521160	Yeah.
+1522220	1522780	.
+1527300	1529920	A has not gone from priority 2 to priority 3.
+1530140	1531820	It's 2.3.
+1532620	1535080	So it's still priority 2, right?
+1535300	1541440	But it's saying that, okay, it's process P3 is the one that has proposed this priority,
+1541860	1542960	highest priority 2.
+1542960	1546300	So basically, okay, so if we look at this example.
+1546560	1555580	So, so, so far we saw that, yeah, okay, it's, it's kind of, because there's so many animations,
+1555780	1557240	it's hard to kind of track the particular thing.
+1557360	1565420	But, okay, P1 had proposed priority 1 for A, but these P2 and P3 had proposed priority 2,
+1565520	1565600	right?
+1565720	1572360	So now basically P1 will say that, okay, the priorities I've received for A include one proposed
+1572360	1579800	by me, 2 proposed by me, 2 proposed by P2 and 2 proposed by P3.
+1580060	1584280	This is the highest amongst this, so I'll set 2.3, okay?
+1589720	1599600	So basically append the ID of the process that has proposed that, that value, that priority
+1599600	1605600	to that, to that, to be, to you said that, you attach that to the priority value basically,
+1605600	1612920	and then you do that, okay, all right, so now, now, so now A is technically deliverable
+1612920	1616180	at all of these processes, but we won't deliver it yet.
+1616280	1619980	We can only deliver a message when it's at the head of the queue, okay?
+1619980	1624860	And messages could be, like, reordered depending on what the final priorities end up doing.
+1626320	1642480	Okay, so now P1, P1, P1's proposal for message B, so P1's proposal for message B reaches P3.
+1642480	1647500	So, now P3 has all of the proposals for message B.
+1647700	1650280	What will it set as the final priority for B?
+1655440	1656580	3.1, right?
+1656800	1658200	So, it will again pick the highest.
+1658420	1664880	So, these are the three values it will compare, and it will pick 3.1 to be the final priority
+1664880	1665620	of B, right?
+1668180	1672960	And, and 2.3 is less than 3.1, so A and B will swap places in the priority queue.
+1673860	1677580	And, now, we can see that both A and B are deliverable, okay?
+1677660	1681400	So, the, the blue and the yellow color doesn't mean too much here, as long as it's not grey,
+1681560	1683240	it's deliverable in these slides.
+1685400	1687580	And, we, P3 will end up delivering both.
+1687680	1690220	So, now, it's safe to deliver A and B in that order.
+1690360	1693360	So, it will first deliver A and it will then deliver B, okay?
+1695520	1700160	And, and P3 will also send out the agreed priority to other processes, but they have not yet
+1700160	1703200	reached, so I have not yet drawn the arrows for those, okay?
+1704460	1710600	Now, P3's proposal for C, C's priority reaches P2.
+1710780	1717420	So, now, now P2 has also received all the proposals for C. What will be set, set as C's
+1717420	1718200	final priority?
+1724640	1726860	3.3, right?
+1728260	1733800	So, oops, yeah.
+1733800	1738160	So, P2 will set 3.3 to be C's priority.
+1741020	1742340	And, yeah.
+1742840	1749080	And, let's say this final priority reaches both P1 and P3 as well.
+1749340	1754880	So, they'll also set 3.3 to be C's priority and we'll swap places again.
+1759200	1762100	And, P3 can deliver C as well.
+1762240	1765720	So, P3 had already delivered A and B. So, it can deliver C as well.
+1765880	1767340	So, these check marks here indicate that.
+1767540	1772260	And now, P1 can deliver, deliver A. So, A is deliverable.
+1772380	1774220	It's at the head of the P1's queue.
+1774220	1775220	So, it can deliver A.
+1776540	1784860	Then, finally, once P3's when the final priority of B as decided by P3 reaches P2.
+1786800	1796680	The final priority of B gets updated by P2 and you rearrange the priority queue and P2 can
+1796680	1803340	now deliver all three messages in the order A, B, C. And, once B's priority, final priority
+1803340	1810540	reaches P1, P1 will update B's value, priority value.
+1811100	1815540	The priority queue remains unchanged in this case and B and C get delivered.
+1821120	1822440	To the application.
+1823000	1823760	Yeah, yeah, yeah.
+1823920	1825960	So, all of this is happening.
+1826120	1828040	Remember that diagram I used to have.
+1828140	1831300	So, all of this is happening as part of the total order multicast protocol.
+1831940	1836560	So, you basically have like you know the basic total order multicast implemented on top
+1836560	1838120	of basic multicast, right.
+1838120	1842440	So, these actions happen upon the B delivery.
+1842620	1848220	But, the total order multicast protocol is the place where this priority queue is maintained.
+1848380	1849680	We are buffering these messages.
+1850440	1853820	And, this total order multicast protocol, that's just underneath your application,
+1854040	1858340	will then deliver the message to the application once the conditions of the access
+1858340	1859480	are satisfied.
+1865560	1869600	At this point, so when, when, when I have the check mark here, that's when the message
+1869600	1871000	is getting delivered to the application.
+1871260	1871440	Yeah.
+1873520	1875060	Oh, by these arrow endings.
+1876560	1881320	So, the, the very first time it's basically, so the B delivery, okay, what are the, the basic,
+1881480	1883320	so you can remember this diagram here, right.
+1883320	1889780	So, you have your application, you have the total order multicast protocol and then you
+1889780	1892160	have the basic multicast protocol, right.
+1892400	1897820	So, the basic multicast protocol will just deliver the messages to the total order multicast
+1897820	1900780	protocol as soon as the messages arrive at the process, right.
+1900920	1903720	So, that's the, that's the, these arrows.
+1904000	1910980	So, basically direct multicast of A is issued by P1, it gets B delivered at P2, it gets B delivered
+1910980	1917940	at P3, but, yeah, it's still, it's still, it, then ends up getting buffered in this total
+1917940	1921860	order multicast, by the total order multicast protocol in this priority queue.
+1922120	1923960	So, the message is not delivered to the application yet.
+1925280	1927700	Yeah, I said it's not related to the application.
+1928020	1929900	So, when you are doing this,
+1930340	1932080	right, and then it's not to be active,
+1932300	1933760	and then it's not to be active,
+1933780	1933920	and then it's not to be active,
+1934180	1935400	and then it's not to be active,
+1935480	1939960	and then it's not to be active,
+1942320	1942800	how is it reliable?
+1942800	1943620	How is it reliable?
+1944000	1945160	We're not talking about reliability,
+1945440	1946880	we're talking about total ordering here.
+1948040	1950820	We're not talking about total order reliable multicast,
+1950940	1953860	we're just talking about total order multicast, right.
+1954100	1957440	So, we, we are implementing total order multicast over basic delivery.
+1958080	1961300	Now, total order reliable multicast is whole other thing, right,
+1961460	1963240	and that's what you're supposed to do for your MP1.
+1963680	1965920	I'm not going to tell you how exactly you'll do that,
+1966020	1968220	you have to think it through, okay.
+1969380	1971780	So, I'm not guaranteeing reliability here.
+1973820	1976480	So, I'm not even going into what will happen when,
+1976560	1977440	when failures occur.
+1977680	1979020	I would like you all to think about it,
+1979120	1980380	and we can, we can discuss that,
+1980760	1982120	maybe after the MP1 is due.
+1984680	1986720	Okay, and that's, that's the part of like,
+1986920	1988820	how you think, think things through, okay.
+1988820	1989780	Yeah.
+1990460	1990820	.
+1994120	1995520	Yes.
+1996400	1997800	.
+1999360	2000760	Right.
+2001000	2001560	.
+2001560	2002700	Yeah.
+2002920	2003740	.
+2005180	2006580	Right.
+2006740	2007100	.
+2007100	2008220	.
+2019680	2022480	Now, so actually, just to continue on the note of reliability.
+2022660	2025840	So, now if you want to ensure reliability on top of this total order,
+2026700	2028960	multicast delivery, you need to make sure, I mean,
+2029080	2031480	like you need to kind of, this is like what the focus
+2031480	2032700	need to do for MP1.
+2032780	2036800	So, you need to make sure that if one process has delivered the message,
+2036800	2039740	basically this, this thing has happened, like, you know,
+2040160	2043800	you have a check marks here, it's at the head of the ISIS priority queue,
+2043920	2044680	and you've delivered it.
+2045060	2046780	If one process has delivered it,
+2046880	2049400	all other process must deliver it as well.
+2049720	2055020	So, think about how, how you would like augment this ISIS protocol
+2055020	2060760	with reliability, like what, what aspect here must use R multicast.
+2060840	2062840	So, currently I've used B multicast everywhere,
+2063060	2066040	but you can maybe use R multicast somewhere here to make sure that
+2066040	2067060	reliability is guaranteed.
+2068040	2068080	Okay.
+2069920	2070860	All right.
+2071100	2071160	Yeah.
+2073880	2074640	.
+2079760	2081260	What is the second part?
+2083940	2084700	.
+2087080	2088540	The final priority?
+2088800	2088960	Yeah.
+2090580	2091340	.
+2092620	2093380	Yeah.
+2093380	2099800	So, yes, so I mean, especially if you, like,
+2099940	2102980	you can think about whether you need reliable multicast
+2102980	2103760	in the first part.
+2104080	2106180	You do need it for the final priority,
+2106460	2109640	and I'll let you all, I'll leave it up to all to work out,
+2109800	2112140	like, where you need R multicast.
+2113800	2114280	Okay.
+2115340	2115820	Yeah.
+2117580	2118060	Okay.
+2118060	2118080	Okay.
+2118980	2121100	So, why, why does this, okay,
+2121160	2122740	it's actually any questions on this algorithm.
+2122820	2124620	Let me actually go back to this slide now,
+2124900	2126520	now that we have looked at the example.
+2127020	2128540	So, just stare at it for a bit.
+2128680	2130820	If you have any questions, feel free to ask.
+2132620	2134380	So, is the, is the process clear?
+2159520	2163340	Can you repeat your question again a bit more coherently?
+2164900	2165720	.
+2165720	2166100	.
+2166100	2166340	.
+2166940	2167040	Right.
+2167220	2167800	.
+2168340	2168360	.
+2168360	2168360	
+2168360	2168360	
+2171200	2172020	Yeah.
+2172400	2172840	.
+2172840	2173420	.
+2174340	2174600	.
+2174600	2174720	.
+2174720	2175060	.
+2175060	2175060	
+2175060	2175260	.
+2175260	2175260	
+2175260	2175260	
+2175260	2175340	.
+2175340	2175340	
+2175340	2175340	
+2175340	2175340	
+2175340	2175340	
+2175340	2175340	
+2183920	2185860	What is, what is the sequence one?
+2187820	2188280	.
+2188280	2188420	.
+2188420	2191920	Why is, why does, so, B has priority 3.1,
+2192040	2193460	it doesn't have sequence one.
+2194760	2198740	So, the, the, so, here like we have replaced the terms.
+2198960	2201220	So, you can think of this priority to be equal to the sequence.
+2201360	2201540	Okay.
+2201820	2204320	We are using the term sequence and priority interchangeably.
+2205080	2209480	And, like, as, so, this is, this is a slide that you need to kind of look at again maybe.
+2209480	2216180	So, you, you have the, the first number here is basically the sequence or the priority.
+2216520	2222300	The second number here is the process ID that has proposed that sequence of priorities.
+2222340	2225400	The ID of the process that has proposed that sequence of priority.
+2225400	2232080	And, that is the tuple we use when comparing these sequences of priorities across messages.
+2232920	2233560	Okay.
+2235460	2236420	So, oops.
+2238020	2241520	So, I am not understanding a question then.
+2241720	2243880	So, given that do you still have a question?
+2244500	2245140	.
+2245140	2245920	.
+2245920	2246160	.
+2246160	2247100	.
+2247100	2247520	.
+2248160	2248180	.
+2277460	2284920	So, so, what that means is that when P delivers M1, it is at the head of P's queue.
+2285360	2288080	Because, it's only then that, that message will end up getting delivered.
+2288820	2295280	And, if it is delivering M1 before M2, that means that M2 can have, can be in one of the
+2295280	2295880	following places.
+2296460	2302100	So, it's possible that M2 is already in, in P's queue and it is also deliverable.
+2303360	2304700	But, it's not at the head.
+2304980	2309100	So, the final priority of M1 is less than the final priority of M2.
+2309820	2315720	So, here when I say less, remember that less means that like you know when we talk of priority,
+2315900	2319220	less means that like it actually has higher priorities delivered first kind of a thing.
+2319320	2321280	But, like the value is less.
+2322280	2322680	Okay.
+2323040	2326900	So, final priority of M1, the final sequence of M1 is less than the final sequence of the
+2326900	2327900	final priority of M2.
+2330300	2338500	The other condition could be that M2 is already in P's queue, but it's not yet deliverable.
+2339020	2344840	So, that would mean that the final priority of M1 is, must be less than the proposed priority
+2344840	2345740	of M2.
+2347340	2353280	And as we know that the final priority that will be selected for M2 is guaranteed to be
+2354120	2359040	greater than equal to the priority of M2 proposed by any, any of the processes.
+2359820	2365340	So, therefore, final priority of M2 must be higher than the final priority of M1.
+2372980	2386820	And therefore, the final priority of M2 is guaranteed to be higher than the final priority of M1.
+2386820	2387940	Okay.
+2388140	2389460	Are you all following this?
+2389680	2391400	Any questions on these conditions?
+2397540	2398100	Why?
+2398300	2399700	Why this must be true?
+2402920	2403480	.
+2404660	2406080	So, by design, right.
+2406280	2413320	So, the way I just works is that each process will send its proposed priority to the sender,
+2413320	2413460	right.
+2413620	2418680	And the sender by design is picking the max of all of the proposed priority and setting
+2418680	2420240	that to be the final priority, right.
+2420280	2425020	So, the final priority set as the max of all possible proposed priorities, then this is
+2425020	2427000	second condition is guaranteed to be true, right.
+2428220	2428660	Okay.
+2429940	2430540	All right.
+2432620	2438640	So, similarly, if now let's assume the contradiction that, you know, let's say P prime ends up delivering
+2438640	2445140	M2 before M1, by a same set of arguments, the final priority of M2 will end up being less
+2445140	2446320	than the final priority of M1.
+2446740	2451380	But that's a contradiction because we can only have one final priority for each message.
+2451620	2454980	So, we can't have that at two different processes.
+2455300	2459200	So, basically, so, this is not possible.
+2460820	2468920	So, by, well, so, using this group by contradiction, we can say that if M, if M is, M1 is delivered
+2468920	2473900	before M2 at, at process P, it must be delivered in the same order at process P prime as well.
+2475500	2475940	Okay.
+2476340	2477640	Is this clear to everyone?
+2477700	2478340	Any questions?
+2487740	2489100	All right.
+2489560	2491960	All right, okay.
+2492440	2499960	So, this is clear, I will move on to the next multicast ordering flavor which is causal multicast.
+2502140	2506480	So basically how to implement causal matricast, okay?
+2509800	2511180	Really, any questions on ISIS?
+2512580	2513320	Yeah.
+2519780	2522520	Right, max of all the proposed ones.
+2524700	2525440	Yeah.
+2537400	2543720	But here like when we are thinking of, so now once you kind of incorporate that as part
+2543720	2544860	of your algorithm, right?
+2545600	2551860	So now this how we are concatenating things also basically this whole tuple becomes part
+2551860	2552640	of the priority.
+2552640	2558080	So that max that we are considering is taking that tuple into account, entire tuple into
+2558080	2558260	account.
+2558380	2561320	And that's why I couldn't directly answer your question given I knew the answer that we were
+2561320	2562400	breaking tie in this manner.
+2562620	2567580	I hadn't thought about like, oh, if I don't break ties, like, I'm actually not sure.
+2567720	2571320	That's why I didn't want to answer in either direction about whether that will necessarily
+2571320	2571740	be true.
+2571920	2574700	It might, it might be true, but we have to work out the proof.
+2574820	2577060	There could be cases where it actually ends up not being true.
+2580080	2586360	Right, but yeah, I think now when we think of max like remember like, oh, where is my scribbling?
+2586520	2586520	
+2586980	2590560	So like the way we are picking the max is taking that whole tuple into account.
+2591880	2598720	So when, when A set, set like 2.3, sorry, when, when P1 set 2.3 to be A's final priority,
+2599200	2600680	it didn't set 2.2 for that reason.
+2600860	2602760	2.3 is higher than 2.2.
+2603020	2609900	So even though both P2 and P3 propose the priority 2 for A, 2.3 was selected as the final
+2609900	2616480	winning tuple as the priority 4 for A. All right.
+2617200	2619320	Any other questions on ICES?
+2621680	2625520	Yeah, given the amount of questions I usually get, I was expecting more questions on ICES.
+2625620	2627060	So that's why I'm reluctant to move on.
+2627260	2633280	So really, I'll move on, okay, I'll move on then, okay.
+2633280	2641820	So coming to the implementation of causal order multicast, so just a quick reminder, so
+2643120	2649660	what causal order means is that if multicast of M was issued before the multicast of message
+2649660	2656760	M prime, then any correct processor delivers M prime should have already delivered M, okay.
+2657960	2663440	And as, as we discussed extensively in the last class, here the happen before relationship
+2664120	2670240	is governed by Lampot's happen before relationship, but the key thing is that we consider the messages
+2670240	2675860	that are delivered at the process, like the, the, the, the causality is established by the,
+2676500	2680840	by the delivery of messages and not just by the underlying protocol receiving the messages,
+2681860	2682380	ok.
+2684040	2684720	All right.
+2685400	2688300	So, how do we go about implementing a causal order multicast?
+2688860	2696380	So, the idea is similar to how we implemented the FIFO order multicast, so each process is
+2696380	2702340	maintaining some kind of a sequence which is sent along with the, with the message.
+2703860	2709040	But what we sent with the message differs instead of sending this is one sequence value end up
+2709040	2716040	by sending a sequence vector and the updating rules also differ, ok.
+2717060	2723360	So, in particular each process, each receiver maintains a vector of per sender sequence numbers
+2723360	2724020	or integers.
+2724360	2732960	So, if a process is P 1 through P n, P i maintains a vector of sequence numbers 1 to n initialized
+2732960	2740640	as, as all zeros and P i j is the latest sequence number P i has received from P j, ok.
+2741040	2746240	And it ignores other, and it ignores other network messages and only looks at the multicast
+2746240	2747500	message delivered to the application.
+2747800	2753580	So, the, the, the, the causal order is established only in the context of these multicast messages.
+2757300	2766360	So, when a process P j issues a message, the multicast of a message m, it will first increment
+2766360	2774000	this, the, the jth index of this vector that corresponds to its cell and it will send this
+2774000	2783800	entire vector 1 to n with m as its, with, along with m as the sequence vector, the sequence
+2783800	2786020	number corresponding to m, ok.
+2788760	2796300	And then when, when a, when this message is B delivered at, at another process P i, remember
+2796300	2800840	like again we are implementing a causal order multicast protocol on top of like a basic multicast.
+2800840	2809280	So, when this message is B delivered at, at P i and let us say this, the, the, the, the
+2809280	2812060	message has, has a sequence vector B.
+2813000	2818980	So, now P j will end up, sorry P i will end up buffering this message until two conditions
+2818980	2819620	are satisfied.
+2820140	2826520	The first condition is that this is, this message is indeed the next message that P i was expecting
+2826520	2851860	from P j. And, and all, for all k not equal to j, B k must be less than, so all, all multicast,
+2851860	2857820	anywhere in the group which happened before m must have also been received by P i, ok.
+2861820	2869860	And when the above two conditions are satisfied then we can, ah, deliver, ah, ah, we, ah, this,
+2869920	2877300	this message M. So, ah, I'll, I'll come back to the slide, let me go over an example and this
+2877300	2882860	might become clearer, ok. So, basically what, what these vectors are representing and, and
+2882860	2891180	why, why we have these conditions, ok. So, ah, let's consider this, ah, ah, ah, ah, these,
+2891260	2897860	these three multicasts issued at these three processes. So, the sequence vector we initialize
+2897860	2906560	that as 0, 0, 0, 0, 0 at each of these four processes, ok. Then, when P 1 issues its multicast,
+2906740	2912060	this is the thread multicast, ah, it will update its sequence vector. So, what, what will it
+2912060	2919780	update it to? 1, 0, 0, 0, ok. So, it is, this is just saying that, ok. So, by the self-deliveries
+2919780	2923840	are omitted for simplicity. But, yeah, once it issues this multicast and it self-deliveres
+2923840	2930600	it at the same time, it will basically update the sequence vector to be 1, 0, 0, 0, ok.
+2931660	2942820	So, this indicates that this is the first multicast from P 1. Now, this 1, 0, 0, 0 is, ah, is piggybacked
+2942820	2952760	along with the message and it's sent to all the, all the processes, ok. So, now when P 4 receives
+2952760	2961720	this, ah, this message 1, 0, 0, 0, 0, it will see that, ok. My, my current, ah, my current
+2961720	2969620	sequence at, at this first index was 0. I received this message 1, 0, 0, 0, I was expecting 1 from
+2969620	2975880	P 1 and all of the other, ah, all of the other indices are the same, they are all like 0, 0,
+2975880	2981800	0, 0, 0, 0. So, both of these conditions get satisfied and this message can be delivered,
+2982320	2990500	ok. So, it is the next message I was expecting from P 1 and everything else is the same, ok.
+2990660	2998880	So, P 4 will end up delivering this message, ok. Ah, what about P 2, will P 2 end up delivering
+2998880	2999480	the same, ok. Yeah.
+2999480	3002700	So, if you think for the conditions again, yeah.
+3005820	3006220	Yeah.
+3006220	3011540	So, the first one is this message is the next one P, I, so that, that means that that's
+3011540	3014440	the one, here, here, here, here, so, right. Yeah. And what if the.
+3014440	3014600	And what if the.
+3014600	3017720	The one, the, the first index is one and it goes from.
+3017840	3017840	
+3018280	3026340	So, here basically, ah, ah, ah, ah, for all of the other indices, the, ah, the values in
+3026340	3028460	and that vector that you're getting from the message
+3028460	3031920	should be less than equal to the, to what?
+3032380	3033160	The one that we just updated?
+3035140	3035880	Yeah, yeah.
+3036500	3038780	Wait, did I have it wrong here?
+3042180	3044320	Do I have it the other, no, no, no.
+3045260	3047320	Wait, actually just let me just double check.
+3047540	3049780	I might be blanking out here a little bit.
+3051580	3054460	I had that value wrong in my slide.
+3054460	3055880	Wait, just one sec.
+3068720	3070160	Yeah, no, I have it right here.
+3070760	3073020	Sorry, I got a little bit confused in the directionality.
+3073780	3074100	Okay.
+3076120	3076700	All right.
+3078540	3078940	Okay.
+3079580	3085920	So, you end up delivering it at, at, at P 4.
+3086080	3088260	What about P 2 will end up delivering it at P 2?
+3089280	3089720	Yeah.
+3090520	3092320	So, same, same condition you end up delivering it.
+3092600	3093040	Okay.
+3093040	3093100	Okay.
+3093940	3097280	Then, at P 3 this red message reaches quite late.
+3097420	3102020	So, let's see what, what, what, what will P 2 do when it issues the multicast of the blue
+3102020	3102460	message?
+3108200	3108640	Yeah.
+3108640	3110620	So, P 2 will change.
+3110780	3117740	So, once it, once it delivers this message, the sequence vector at P 2 has become 1 0 0 0.
+3119920	3125000	So, it will be, so when, when P 2 issues the blue multicast, the sequence vector gets updated
+3125000	3126440	to 1 1 0 0 0.
+3126580	3126880	Okay.
+3127000	3133540	So, what, what this indicates at this point of time is that P 2 has delivered one message
+3133540	3134460	from P 1.
+3134600	3136880	So, that's what the first index indicates.
+3137180	3141840	And it indicates that, okay, now P 2 has, so P 2 has delivered one message from P 1.
+3142140	3146060	And now P 2 is issuing its first multicast, okay.
+3146060	3149640	So, that's what this 1 1 0 0 indicates.
+3149900	3153040	And it has not yet heard from P 3 and P 4.
+3153140	3156480	Not, not yet delivered any messages from P 3 and P 4, okay.
+3157820	3164060	So, next when, sorry, okay.
+3164340	3170060	So now when P 2's message reaches P 1, will P 1 deliver it?
+3171200	3171760	Yes.
+3171760	3171820	Yes.
+3172020	3175500	And what will the updated sequence vector at P 1 be?
+3181460	3181820	Yeah.
+3182340	3186520	So, it will be set to the piggyback vector, which, and it will be basically 1 1 0 0.
+3186700	3190840	So, more than setting it as a, as a, as a piggyback vector, the, the, the, the, what the algorithm
+3190840	3195120	will do is it will update the, the second index, incremented by one.
+3195840	3198280	Which is, which ends up being the same as the piggyback value.
+3198960	3203900	It may not always, may not always be the case maybe.
+3204640	3205140	Yeah.
+3206140	3206360	Yeah.
+3207060	3207560	Okay.
+3207740	3214920	So, now what this indicates is that P 1 has, has issued one multicast, self-delivered it
+3214920	3215320	as well.
+3215660	3217580	So, that's what the first index indicates.
+3217800	3223520	And the second index indicates that P, P 1 has now delivered a message from, from P 2.
+3224260	3224820	Okay.
+3224880	3224880	
+3225140	3228720	Now, P 3 receives this blue message next.
+3229700	3232160	Will P 3 end up delivering the blue message?
+3234120	3234640	Hmm?
+3235760	3236280	Yes.
+3238420	3239420	Or no.
+3243560	3244080	Okay.
+3244200	3245960	So, let's, let's come back to our condition.
+3246120	3250600	So, now, now P 3 is, P 3 is stuck at 0 0 0 0.
+3250600	3251440	Right?
+3251660	3258060	And it receives a multicast with sequence vector 1 1 0 0.
+3258460	3261620	So, if we come back and look at these conditions here.
+3262240	3264200	Is the second condition satisfied?
+3264920	3265540	No?
+3265740	3265980	Right.
+3266280	3267920	So, the second condition is not satisfied.
+3269100	3270280	Are you all following?
+3271400	3271860	Okay.
+3271860	3272120	Okay.
+3272940	3275220	So, the second condition is not satisfied.
+3277000	3282740	So, basically what it indicates is that it's, it's missing a one from, from P 2.
+3282880	3289740	So, P, basically the, this blue, this blue multicast when it was issued.
+3289840	3292000	So, this is basically what's helping it establish the causal order.
+3292080	3296320	So, what it indicates is this blue multicast when it was issued, P 2 had already delivered
+3296320	3303300	a message from P 1 and P 3 has not yet delivered that first message from P 1.
+3303680	3311060	So, P 3 should hold on to this blue multicast and buffer it until, until that condition is
+3311060	3311520	satisfied.
+3312120	3312620	Okay?
+3313020	3320320	So, so this vector here, the first index of this vector is greater than the first index
+3320320	3323780	that P 3 maintains and so the, the second condition is not satisfied.
+3323780	3323800	Okay.
+3324680	3325240	All right.
+3325460	3326120	Is this clear?
+3326780	3326840	Yeah.
+3331360	3331740	.
+3346880	3347680	Yeah, yeah, yeah.
+3347800	3351060	Remember the, this is the rules that we discussed in the last class on Friday, right?
+3351060	3352140	Is this clear?
+3354700	3355140	Yeah.
+3355360	3358680	It's, it's, it's based on the, so here the delivery actually happens, right?
+3358800	3363160	So, the delivery has happened and then blue has, so even the application has seen the red
+3363160	3365520	multicast before it issued the blue multicast.
+3366040	3366480	.
+3367860	3368300	Yes.
+3368540	3373640	Not just receiving, it's a delivery, it's a delivery that establishes causality, yeah.
+3373640	3382300	So, so the reason that we cannot deliver for this one is because, um, the, the second entry
+3382300	3383660	is one and not zero?
+3384580	3387340	So, it's because the first entry is one and not zero.
+3387420	3391000	So, this is the second entry is so, with respect to the second entry, so there are these two
+3391000	3391940	conditions here, right?
+3392200	3392980	So, let's look at this.
+3393060	3398620	So, basically you are receiving this multicast with vector one, one, zero, zero and this process
+3398620	3400960	is, is basically at zero, zero, zero, zero.
+3401220	3403480	So, now the first condition is satisfied, right?
+3403540	3407020	So, if I look, if I compare the second index, I am, I am receiving it from P 2, right?
+3407020	3413780	So, if I look at the second index, I am actually expecting sequence one from P 2.
+3414420	3414900	.
+3416260	3419440	Yeah, so this, this condition is satisfied, right?
+3419860	3424260	But this condition which is saying that, okay, I have received this vector and for all
+3424260	3427660	values that are not equal to two, basically in this case two, right?
+3427780	3434460	So, for all values that are not, do not correspond to the index of the sender, the, the, the values
+3434460	3441980	at, at this, the value in the vector should be less than or equal to basically the, the
+3441980	3443640	values that I currently have.
+3443760	3445320	So, I should be at least as up to date.
+3445540	3450460	So, in that case, isn't it impossible to deliver any messages that have more than, that
+3451080	3452460	don't have, you know, zeros?
+3452780	3455600	So, we have to update, you know how it says zero, zero, zero, zero, right?
+3455940	3456920	Can we have to update that?
+3457980	3459940	No, it's less than or equal to, right?
+3460080	3461840	We did end up delivering, sorry.
+3461840	3464540	We did end up delivering these two messages.
+3464820	3465100	Yeah.
+3465440	3472360	Yeah, but once, once like the blue, so what this is, what this is essentially at the core
+3472360	3478720	what it's saying is that when the blue multicast was issued P 2 had delivered one message from
+3478720	3479180	P 1.
+3479880	3486840	So, now all processes that deliver this blue multicast should also have delivered this one
+3487000	3489800	one message from P 1, the first message from P 1.
+3489900	3490100	Okay.
+3490100	3491760	And that is what is establishing causality.
+3492060	3499060	So, the way to check that is basically you put in the sequence counter of P 1 into the
+3499060	3499540	vector.
+3499620	3500520	This is what this is.
+3500700	3503060	So, this is saying that, okay, one message from P 1 had been delivered.
+3503240	3506980	And now all the processes that are receiving this blue message check that, hey, you know,
+3507080	3508560	have I delivered a message from P 1?
+3508560	3511980	If not, I should wait before I deliver this blue message.
+3512200	3512400	Yeah.
+3513500	3513860	Okay.
+3515080	3515700	All right.
+3515960	3520840	So, it's not, I didn't follow what you meant by no messages can be delivered because everything
+3520840	3521760	is zero first because.
+3522220	3524640	All the green ones are just all zeros.
+3525860	3527520	Are those ever going to get updated?
+3528180	3528580	Yeah.
+3528700	3529840	This is the update, right?
+3530000	3530820	This is the update.
+3531000	3531680	Oh, yeah.
+3532400	3532800	Yeah.
+3533040	3533080	Yeah.
+3533160	3537360	I mean you're updating that as and when you're sending the multicast and you are, you're
+3537360	3539320	delivering the messages, you're updating that.
+3539520	3541280	So, this is the last step, right?
+3541720	3541940	Yeah.
+3542040	3543940	Whenever you deliver a message, you update that.
+3544200	3545820	So, this is, this was just a start thing.
+3546700	3546820	Yeah.
+3547860	3548260	Okay.
+3549540	3550160	All right.
+3551100	3552700	Any, any other questions?
+3553480	3555520	This is, are all of you following?
+3557120	3557560	Yeah.
+3557560	3557660	Okay.
+3558260	3561720	Yeah, just that like I, the faces are looking somewhat blanker today.
+3562200	3562320	Okay.
+3562680	3565860	Because there are a few questions coming from here and there, but I think some of you are
+3565860	3566540	looking pretty blank.
+3566640	3568840	So, I'm, I'm not getting enough, enough feedback.
+3570100	3570540	Okay.
+3571140	3580780	So, then when P4 issues the purple multicast, it will now increment this fourth index in the
+3580780	3580780	
+3580780	3580940	Okay.
+3581120	3583000	I have received this, the first index is here.
+3583060	3583140	Okay.
+3583200	3586040	I have received this red multicast from P1, sequence one.
+3586280	3589800	And now this, the fourth index indicates that, okay.
+3590080	3591900	I'm issuing my, my multicast.
+3593000	3597540	Then this, this fourth multi, this P4's purple multicast reaches P1.
+3597540	3599020	Will it get delivered here?
+3599760	3600320	Yes.
+3600600	3600600	
+3601000	3601060	Okay.
+3601160	3601720	No, no issues.
+3601980	3602780	The delivery happens.
+3603300	3605220	Will it get delivered here at P2?
+3607140	3607700	Yes.
+3608160	3609200	It gets delivered.
+3609880	3611260	Will it get delivered here at P3?
+3612720	3613160	Hmm?
+3616600	3617040	YS.
+3621380	3623180	Does it satisfy both conditions?
+3623960	3624900	Not the second condition.
+3625080	3626860	Not the second condition still, right?
+3626960	3631520	If this is P, P, so P3 is still stuck at 0, 0, 0, 0, right?
+3631520	3637080	So, for the same reason that P3 ends up buffering the blue multicast, will end up buffering the
+3637080	3638960	purple multicast as well, okay.
+3640980	3641700	All right.
+3642840	3643320	Yeah.
+3643680	3647020	And then P4 receives the blue multicast.
+3647120	3648880	Will it end up delivering the blue multicast?
+3652280	3652740	Yes.
+3653980	3654440	Okay.
+3654840	3661240	So, notice that the, the last index here is different from the last index that is carried
+3661240	3663240	by this blue multicast, but that's okay.
+3663320	3664260	This value is higher.
+3664480	3666060	So, you can, you can deliver it.
+3666140	3667500	The second condition is still satisfied.
+3667740	3668000	Okay.
+3668460	3674560	So, it, it, it basically means that, basically the, the blue and the purple multicast are concurrent
+3674560	3678600	and it means that, okay, for the blue multicast to be delivered, we should have delivered
+3678880	3684520	this red message from P1, this first multicast from P1, that condition is satisfied.
+3684740	3689500	So, blue can be delivered irrespective of what happens for the other indices afterwards,
+3691880	3692020	okay.
+3693820	3702000	Then the red, the red multicast hits P3, can, what, what happens at P3 now?
+3702380	3704000	Can the red multicast be delivered?
+3704380	3705060	Yes.
+3705880	3705960	Okay.
+3705960	3708240	So, what will, what will P3 do?
+3708380	3711440	Once it delivers the red multicast, what will its sequence vector be?
+3719480	3720840	One, zero, zero, zero.
+3721080	3721140	One, zero, zero, okay.
+3721320	3723760	So, like going, going back to the slide.
+3723960	3729700	So, once you deliver a multicast, you update your sequence vector at that index only, okay.
+3729700	3734940	So, you update your index vector at that index, you set the, that corresponding index to be
+3734940	3740580	the same as the, what the, what the sequence vector carried by the messages at that index.
+3740580	3742120	So, from, from Pj.
+3746160	3747540	So, yeah.
+3750620	3752200	So, yeah.
+3752200	3752200	
+3752540	3757460	So, when, when this red multicast hits P3, so P3 will update its sequence vector to one,
+3757600	3758240	zero, zero, zero.
+3758860	3763880	Once it has updated sequence vector to one, zero, zero, zero, can it deliver the blue multicast?
+3764560	3765080	Yes.
+3765340	3769920	So, then both conditions for the blue multicast will be satisfied and at that point the blue
+3769920	3773000	multicast from P2 can be delivered at P3.
+3773220	3774880	And what about the purple one?
+3775020	3777300	Can it also deliver the purple multicast?
+3778140	3778660	Yes.
+3778660	3778660	
+3778980	3779320	Okay.
+3779500	3786120	So, once, once, once P3 delivers this red multicast, it updates its sequence vector to one, zero,
+3786300	3786560	zero, zero.
+3787060	3792340	And the causality conditions for both the buffered multicast get satisfied and it can end up
+3792340	3793280	delivering both of them.
+3793800	3794280	Okay.
+3794520	3794600	Yeah.
+3795980	3796460	.
+3799920	3800740	If P3.
+3800900	3800900	
+3801220	3801700	.
+3801700	3802720	That would be fine too.
+3802940	3802960	Yeah.
+3803720	3807580	In fact, like this P4 is delivering purple before blue.
+3807580	3810280	So, the self deliveries are happening right away and that's okay.
+3810600	3811140	Yeah.
+3811520	3812380	And yeah.
+3814020	3815000	You had a question?
+3815440	3815580	Yeah.
+3822940	3824900	After we send the purple one out?
+3825360	3825900	Yeah.
+3826120	3832420	So, there is no, why would, so forget about how we are implementing this.
+3832540	3837000	Like why would like blue not be delivered at P4 after the purple one?
+3837000	3837960	Is there any reason?
+3842060	3842520	.
+3848920	3850180	Can you speak a bit louder?
+3850640	3850760	Yeah.
+3853520	3853980	.
+3854800	3855260	.
+3855980	3856440	Right.
+3856660	3857020	.
+3858060	3863100	So, P this is the reason why we are not delivering blue at P3 is because it was not
+3863100	3864380	to receive the red multicast.
+3864500	3864940	Okay.
+3865080	3868480	And there is a clear causality between the red and the blue multicast.
+3868600	3872580	So, the red multicast happens before the blue multicast because the red multicast is
+3873100	3877420	delivered at P2 before the blue multicast is issued at P2.
+3877420	3882060	and delivery and issuing of the red multicast
+3882060	3883720	happens before the delivery of the red multicast.
+3883760	3886840	So red multicast is issued before the blue multicast
+3886840	3888580	is issued, so that causality is established.
+3889160	3890920	Similarly, we have established a causality
+3890920	3893840	between the red and the purple multicast, right?
+3894000	3896260	So P four ends up delivering the red multicast
+3896260	3898120	before it issues the purple multicast.
+3898240	3900360	So the red multicast from P one happens
+3900360	3904240	before the purple multicast from P four.
+3904560	3906780	But we don't have any causality relationship
+3906780	3908120	between the blue and the purple one,
+3908480	3910320	and they can be delivered in either order.
+3910820	3915460	So now, so what one question was why does P four
+3915460	3918440	and what was the question, why does P four end up issued?
+3922460	3925560	Why can we send P four before receiving what?
+3931700	3934400	Why would we want to wait for the blue signal
+3934400	3936080	before sending the purple one out?
+3936080	3939800	Like when a process decides to issue a multicast
+3940320	3941840	is its own wish, right?
+3941960	3945680	Like, I mean causality is established based on, okay,
+3945760	3949200	like I am issuing a multicast after some message
+3949200	3950600	has been delivered to me.
+3950780	3952840	That indicates a potential causality
+3952840	3954500	and I should keep track of that.
+3954680	3956300	That's what all we are doing, right?
+3956640	3959960	I'm not like purposely trying to delay the issue
+3959960	3961960	of a multicast that's ready to be sent out
+3961960	3964600	because I want to establish a causality.
+3964920	3966860	I don't want to establish causality,
+3966920	3969740	I want to respect causality that gets established based
+3969740	3971080	on how the multicast are issued.
+3971540	3973180	So that's the key distinction, okay?
+3973420	3976320	And in fact, with this causal order multicast,
+3976500	3977560	if we're just implementing that,
+3977660	3979440	like self-deliveries can also happen right away.
+3980840	3984300	Self-deliveries happen right away and that's still correct.
+3987020	3990880	When a delivery happens for other multicasts
+3990880	3992760	is what's going to establish the causality.
+3993800	3996340	Okay, so a process is free to issue a multicast
+3996340	3999260	whenever it wants and self-deliver it,
+3999580	4002920	but when it can deliver the multicast from other processes
+4002920	4005080	is what's going to establish causality
+4005080	4008920	and influence how it's going to, sorry,
+4010920	4014060	basically the causality that gets established
+4014060	4016580	will influence how it ends up delivering the messages
+4016580	4019860	from other processes, all right, yeah.
+4020700	4021180	Okay, cool.
+4025420	4026140	.
+4026140	4026300	Mm-hm.
+4027140	4027860	.
+4045420	4047080	You might need to, right?
+4047260	4051120	So it's possible that like I, like there is,
+4051280	4054140	let's say there's some, hypothetically there's some causality
+4054140	4055840	between the blue and the purple message, right?
+4055840	4057740	And let's say like, you know, so the blue should
+4057740	4060020	be delivered before purple, hypothetically supposing.
+4060400	4064660	And at P3 I ended up like first buffering purple
+4064660	4069520	and then I ended up offering blue and then I delivered it.
+4069620	4073020	So then I look at like, you know, my purple message first,
+4073220	4074520	oh, I find out it's not deliverable.
+4074800	4077360	But then I look at the blue message and I see that,
+4077520	4079560	oh, causality condition is satisfied, I can deliver it now.
+4079880	4082260	Then I might have to go back to the purple message
+4082260	4083840	and check that, okay, now that I've delivered the blue message,
+4083960	4085500	can I now deliver the purple message?
+4085880	4087180	And then I can deliver that.
+4087320	4088660	In this case, the two are concurrent,
+4088780	4090220	so I could have delivered them in whatever order.
+4090400	4092720	But yeah, you might need to kind of go back and check.
+4098520	4098880	.
+4100680	4103320	Yeah, you could do some kind of an ordering.
+4103540	4107560	Yeah, so then you could be smarter about that, right?
+4107700	4109620	So if you're just like, so it depends on how you're implemented.
+4109740	4110880	That's an implementation detail, right?
+4111120	4112260	So it depends on how you're implementing it.
+4112280	4114260	If you're just implementing it by storing the messages
+4114260	4115340	in the order in which they arrive,
+4115880	4117640	you scan once, you may have to scan again.
+4118060	4122020	If you end up storing them in some like causality order,
+4122020	4123740	that okay, like I know that like, you know,
+4124140	4126880	from the vectors of like blue and purple,
+4127100	4128980	like I, there is a dependency between them.
+4129180	4130960	If you end up storing them in that order,
+4131100	4135020	you may, you might skip like a second scan.
+4135760	4138180	So yeah, you can be smarter about how you implement.
+4138340	4139500	I mean, but then you're paying the cost
+4140020	4140900	during the insertion time.
+4141860	4144280	So when you're inserting the message in the buffer,
+4144460	4147080	you're doing some kind of a scan to figure out
+4147080	4148840	what's the right place to insert it.
+4149960	4152300	But yeah, so there's a trade off.
+4152920	4153700	You had a question?
+4160760	4161200	.
+4165820	4166260	Yeah.
+4168620	4169060	.
+4173140	4175220	Yeah, so for delivery of red multicars
+4175220	4177020	does not happen for whatever reason,
+4177580	4180620	then what would, what that would mean is that at P2,
+4180820	4184720	my sequence vector is still stuck at 0, 0, 0, 0, right?
+4185880	4185880	
+4185880	4185880	
+4185880	4188400	Yeah, and then the blue multicars sequence vector
+4188400	4190340	would look like 0, 1, 0, 0.
+4190540	4193240	And then like there is no dependency of having
+4193240	4195860	first receive the red multicars at other processes
+4195860	4198020	and the blue one can then be delivered before the red one.
+4198100	4200640	So the causality is not established between the red
+4200640	4201540	and the blue multicars.
+4201780	4204500	So yeah, so if you, and if you end up like buffering this
+4204500	4208780	for whatever reason and delivering it after the blue one,
+4209220	4211780	you, you don't end up establishing the causality.
+4212120	4212220	.
+4213980	4214660	.
+4214660	4214660	
+4214660	4214660	
+4214660	4214660	
+4214660	4214660	
+4214660	4214660	
+4214660	4214700	.
+4214700	4214700	
+4214700	4214700	
+4214700	4214700	
+4214700	4215100	.
+4243660	4245060	.
+4245060	4245080	.
+4245100	4246500	.
+4249580	4250980	.
+4275100	4276040	.
+4278280	4279680	.
+4334580	4334900	.
+4334900	4334920	.
+4334920	4335080	.
+4335100	4335240	.
+4340680	4342080	.
+4342080	4343200	.
+4343200	4344440	.
+4345840	4347240	.
+4347240	4347820	.
+4351480	4352880	.
+4352880	4353880	.
+4355320	4355780	.
+4358980	4360380	.
+4360380	4361460	.
+4361460	4362460	.
+4362460	4362600	.
+4365440	4366840	.
+4366840	4368700	.
+4368700	4369120	.
+4369120	4369720	.
+4369720	4370100	.
+4371840	4373240	.
+4373240	4373240	
+4373240	4374340	.
+4376020	4377420	.
+4377420	4378340	.
+4378340	4378760	.
+4378760	4379320	.
+4379320	4380120	.
+4380120	4380120	
+4383840	4385240	.
+4387700	4389100	.
+4389100	4390440	.
+4390440	4391440	.
+4395740	4397140	.
+4397140	4398480	.
+4398480	4398480	
+4398480	4398480	
+4398480	4398480	
+4398480	4398480	
+4398480	4398480	
+4398480	4398520	.
+4398520	4399400	.
+4399400	4399740	.
+4399740	4400320	.
+4400320	4400720	.
+4400720	4400980	.
+4400980	4400980	
+4401540	4401940	.
+4401940	4402060	.
+4402060	4402060	
+4402060	4402080	.
+4402080	4402140	.
+4402140	4402240	.
+4402240	4402800	.
+4402800	4403000	.
+4403000	4403220	.
+4403220	4403480	.
+4403480	4405080	along this tree, okay?
+4405320	4407140	So this way, like once we construct this tree,
+4407820	4410940	all processes will receive the message,
+4411260	4417700	but we end up avoiding the redundancy, okay?
+4421100	4424300	So yeah, so the basic idea then is that the process
+4424300	4425320	will end up sending the message,
+4425420	4427060	we need to a subset of processes in the group
+4427060	4430120	that are, that has direct children in this tree.
+4434020	4436720	So if we do such a thing,
+4437060	4439000	again if we take a look at the physical network,
+4439140	4440680	there might still be some redundancy,
+4440800	4445000	like if this graph, if this like process level graph
+4445000	4448280	is implemented like so, executed like so in the physical
+4448280	4449660	network, there might still be some redundancy,
+4449720	4451460	we may still end up sending some redundant packets
+4452080	4456580	in the network router, but we can also possibly construct
+4456580	4458780	a tree that includes the network router itself,
+4459240	4463380	and this is, there's a protocol for it called IP multicast,
+4463480	4465960	it's, it's very hard to deploy protocol,
+4466260	4467660	like there's, there's been a lot of proposals
+4467660	4469980	around IP multicast, people don't actually end up
+4469980	4472020	deploying it, they mostly end up doing like
+4472800	4474640	some kind of an overlay tree,
+4475300	4478400	not involving all of the routers in the internet,
+4478780	4480180	but the protocol is still out there,
+4480280	4481200	it's just, it's hard to deploy,
+4481380	4484520	it's just a side note, okay?
+4484960	4486940	But yeah, so the basic idea here is that you can
+4486940	4489060	construct this multicast tree,
+4489060	4494960	and this tree based multicast will basically help you
+4494960	4497220	in reducing some redundancy in how many packets
+4497220	4500200	you're sending out when you're trying to do your multicast.
+4501680	4504640	But the problem, one problem that arises could be that,
+4504680	4507220	you know, if a node fails, then I have this overhead
+4507220	4510440	of like, you know, reconstructing the tree to make sure
+4510440	4512340	that all of the other nodes in my system
+4512340	4514180	receive the multicast message.
+4514180	4518900	And so one way to overcome that is through
+4518900	4520300	this approach called gossip.
+4520920	4528260	So in gossip, each, each process ends up
+4528260	4531260	transmitting the message to B random targets.
+4531740	4534540	Okay, so you just randomly pick like B other processes
+4534540	4536920	to send the message to, and you just send the message
+4536920	4537600	to those processes.
+4538040	4540560	And other nodes do the same when they receive the message.
+4540560	4545400	So yeah, everyone just randomly picks like B neighbors
+4545400	4548700	they know about and send the message to those, and so on.
+4549220	4551540	So there is no tree construction overhead,
+4551720	4554780	and it's more efficient in terms of how many packets
+4554780	4556560	you end up sending out into your network,
+4557520	4560760	compared to unicasting it to just all possible receivers.
+4562420	4564600	And this is also known as epidemic multicast.
+4564700	4565440	Can someone tell me why?
+4574160	4575320	Like an epidemic, right?
+4575420	4579100	So in fact, this value B, like how many nodes you send to,
+4579220	4585080	it's also like one of the spreading factor for epidemics as well.
+4585180	4589960	So if this value is more than two, then the epidemic can spread very widely.
+4589960	4593900	I'm forgetting the, there was some, for COVID that there was this value
+4593900	4596500	which was like I think close to two or greater than two.
+4596620	4597940	I'm forgetting the exact value.
+4598360	4600780	But yeah, so it's kind of, it spreads like an epidemic.
+4601520	4604340	So it's probabilistic in nature, there are no hard guarantees
+4604340	4608100	on whether all processes will end up receiving that multicast message,
+4608380	4610100	but it's good enough for many applications.
+4610320	4612320	So it's, it's, it's somewhat probabilistic.
+4612540	4614800	And it's actually used in many real world systems.
+4615000	4617080	So Facebook distributed data store that will be
+4617080	4619100	starting towards the end of this course.
+4619460	4623760	So, uh, use this epidemic multicast as gossip for group membership
+4623760	4626680	and Bitcoin uses it to exchange transaction information between.
+4627640	4630580	And that concludes our discussion for multicast.
+4630760	4633420	Thank you for staying one minute longer.
+4634060	4635940	And yeah, I just wanted to wrap that up before
+4635940	4638360	and then we can do a clean start on mutual exclusion on Friday.
+4638780	4639420	All right.
+4639620	4640060	Thank you all.
+4647080	4647680	Thank you.
+4677080	4677680	Thank you.
+4707080	4707680	Thank you.
+4737080	4737680	Thank you.
+4767080	4767680	Thank you.
+4797080	4797080	
+4797340	4797660	Thank you.
+4797760	4798020	Thank you.
+4798080	4798080	
+4798080	4798080	
+4798080	4798080	
+4798080	4798080	
+4798080	4798080	
+4798080	4798220	It's all about reporting.
+4798220	4798240	So you decided you did not offer proof of any and the need
+4798240	4798240	
+4798240	4798660	And if you have, I consider you something really
+4798660	4798840	inχρεache.
+4798980	4799220	Yeah.
+4799220	4799220	
+4799220	4799260	Thank you.
+4799300	4799540	So for everyone appreciate you tonight's,
+4799520	4799520	

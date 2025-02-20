@@ -1,0 +1,41 @@
+name: myenv
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.12
+  # System dependencies
+  - libgcc-ng
+  - mecab
+  
+  # Python packages from conda
+  - python-dotenv
+  - flask
+  - yt-dlp
+  - pydub
+  - opencv
+  - scikit-learn
+  - numpy
+  - matplotlib
+  - tqdm
+  - librosa
+  - pytesseract
+  - pysoundfile
+  - pytorch
+  - torchvision
+  - ffmpeg
+  
+  # Pip integration
+  - pip
+
+  # Python packages from pip
+  - pip:
+    - qdrant-client
+    - ffmpeg-python
+    - pyannote.audio
+    - sentence-transformers
+    - python-frontmatter
+    - anki
+    - ollama
+    - openai-whisper

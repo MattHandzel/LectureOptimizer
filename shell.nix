@@ -7,9 +7,9 @@ with pkgs;
       ++ [
         python312
         libgcc.lib
-mecab # needed for MeloTTS
-        # ollama
-        # python312Packages.ollama
+        mecab # needed for MeloTTS
+        ollama
+        python312Packages.ollama
 
         # docker
         # docker-compose
@@ -25,8 +25,8 @@ mecab # needed for MeloTTS
             source .venv/bin/activate
 
 
-            # export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
-            # ollama serve > /dev/null 2>&1 &
+      # export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+      # ollama serve > /dev/null 2>&1 &
             #
     '';
   }

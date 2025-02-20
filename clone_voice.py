@@ -4,6 +4,7 @@ import torch
 from openvoice import se_extractor
 from openvoice.api import BaseSpeakerTTS, ToneColorConverter
 from pydub import AudioSegment
+import multiprocessing
 
 encoded_message = "MattHandzel"
 
@@ -59,8 +60,6 @@ def read_tsv(tsv_path):
     return segments
 
 
-import multiprocessing
-
 # Define global variables for worker processes
 worker_base_speaker_tts = None
 worker_tone_color_converter = None
@@ -89,7 +88,6 @@ def init_worker(
     worker_base_speaker_tts = BaseSpeakerTTS(f"{ckpt_base}/config.json", device=device)
     worker_base_speaker_tts.load_ckpt(f"{ckpt_base}/checkpoint.pth")
 
-    # todo: , enable_watermark=False
     worker_tone_color_converter = ToneColorConverter(
         f"{ckpt_converter}/config.json", device=device
     )
@@ -111,9 +109,15 @@ def process_segment(segment):
     start, end, text = segment
 
     src_path = os.path.join(worker_output_dir, f"tmp_{start}.wav")
-    worker_base_speaker_tts.tts(
-        text, None, speaker="default", language="english", speed=worker_target_speed
-    )
+    if not os.path.exists(src_path):
+
+        worker_base_speaker_tts.tts(
+            text,
+            src_path,
+            speaker="default",
+            language="english",
+            speed=worker_target_speed,
+        )
 
     # Extract source tone embedding
     source_se, _ = se_extractor.get_se(
@@ -122,13 +126,14 @@ def process_segment(segment):
 
     # Convert tone
     converted_path = os.path.join(worker_output_dir, f"converted_{start}.wav")
-    worker_tone_color_converter.convert(
-        audio_src_path=src_path,
-        src_se=source_se,
-        tgt_se=worker_target_se,
-        output_path=converted_path,
-        message=worker_encoded_message,
-    )
+    if not os.path.exists(converted_path):
+        worker_tone_color_converter.convert(
+            audio_src_path=src_path,
+            src_se=source_se,
+            tgt_se=worker_target_se,
+            output_path=converted_path,
+            message=worker_encoded_message,
+        )
 
     # Load and adjust audio duration
     audio = AudioSegment.from_wav(converted_path)
@@ -144,33 +149,35 @@ def process_segment(segment):
     return (start, end, audio)
 
 
-def main():
-    args = parse_args()
-    segments = read_tsv(args.tsv_path)
+def clone_voice(
+    tsv_path,
+    audio_path,
+    output_path,
+    ckpt_base="checkpoints/base_speakers/EN",
+    ckpt_converter="checkpoints/converter",
+    num_workers=8,
+    encoded_message="MattHandzel",
+    use_vad=True,
+    target_speed=1.0,
+):
+    segments = read_tsv(tsv_path)
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
-    output_dir = os.path.dirname(args.output_path)
+    output_dir = os.path.dirname(output_path)
     os.makedirs(output_dir, exist_ok=True)
 
     # Initialize models in main process (for target_se extraction)
-    base_speaker_tts = BaseSpeakerTTS(f"{args.ckpt_base}/config.json", device=device)
-    base_speaker_tts.load_ckpt(f"{args.ckpt_base}/checkpoint.pth")
+    base_speaker_tts = BaseSpeakerTTS(f"{ckpt_base}/config.json", device=device)
+    base_speaker_tts.load_ckpt(f"{ckpt_base}/checkpoint.pth")
 
-    # TODO: enable_watermark=False
     tone_color_converter = ToneColorConverter(
-        f"{args.ckpt_converter}/config.json",
-        device=device,
+        f"{ckpt_converter}/config.json", device=device
     )
-    tone_color_converter.load_ckpt(f"{args.ckpt_converter}/checkpoint.pth")
+    tone_color_converter.load_ckpt(f"{ckpt_converter}/checkpoint.pth")
 
     # Extract target tone embedding
-    USE_VAD = True
-    target_se, _ = se_extractor.get_se(
-        args.audio_path, tone_color_converter, vad=USE_VAD
-    )
-    TARGET_SPEED = 1.0
-    encoded_message = "MattHandzel"  # Define appropriately
+    target_se, _ = se_extractor.get_se(audio_path, tone_color_converter, vad=use_vad)
 
     # Prepare data for worker processes
     target_se_cpu = (
@@ -179,16 +186,16 @@ def main():
 
     # Configure parallel processing
     init_args = (
-        args.ckpt_base,
-        args.ckpt_converter,
+        ckpt_base,
+        ckpt_converter,
         device,
         target_se_cpu,
-        USE_VAD,
+        use_vad,
         encoded_message,
-        TARGET_SPEED,
+        target_speed,
         output_dir,
     )
-    num_workers = min(args.num_workers, os.cpu_count())  # Adjust based on resources
+    num_workers = min(num_workers, os.cpu_count())
 
     with multiprocessing.Pool(
         processes=num_workers, initializer=init_worker, initargs=init_args
@@ -206,7 +213,19 @@ def main():
     for start, _, audio in audio_segments:
         final_audio = final_audio.overlay(audio, position=start)
 
-    final_audio.export(args.output_path, format="mp3")
+    final_audio.export(output_path, format="mp3")
+
+
+def main():
+    args = parse_args()
+    clone_voice(
+        tsv_path=args.tsv_path,
+        audio_path=args.audio_path,
+        output_path=args.output_path,
+        ckpt_base=args.ckpt_base,
+        ckpt_converter=args.ckpt_converter,
+        num_workers=args.num_workers,
+    )
 
 
 if __name__ == "__main__":

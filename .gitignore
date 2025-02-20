@@ -15,3 +15,4 @@ processed
 checkpoints
 checkpoints*
 MeloTTS
+__pycache__

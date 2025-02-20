@@ -15,6 +15,8 @@ import librosa
 import cv2
 import pytesseract
 from pytesseract import TesseractNotFoundError
+import torch
+from clone_voice import clone_voice
 
 
 # Setup logging
@@ -24,6 +26,8 @@ logging.basicConfig(
     handlers=[logging.StreamHandler()],
 )
 logger = logging.getLogger(__name__)
+
+TARGET_LANGUAGE = "en"
 
 
 def parse_args():
@@ -53,13 +57,13 @@ def parse_args():
     parser.add_argument(
         "--silent_speed",
         type=float,
-        default=6.0,
-        help="Speed factor for silent parts (default: 4)",
+        default=8.0,
+        help="Speed factor for silent parts (default: 8)",
     )
     parser.add_argument(
         "--min_silence_len",
         type=int,
-        default=250,
+        default=500,
         help="Minimum silence length in milliseconds (default: 500)",
     )
     parser.add_argument(
@@ -92,16 +96,21 @@ def parse_args():
     parser.add_argument(
         "--source_voice", type=str, help="Path to the source voice file"
     )
-
     parser.add_argument(
         "--fps",
         type=float,
         default=-1,
         help="Set the fps of the video (set this lower to increase processing speed)",
     )
+    parser.add_argument(
+        "--num_workers",
+        type=int,
+        default=8,
+        help="Number of workers for parallel processing in voice cloning.",
+    )
     # Boolean flags to control processing steps
     parser.add_argument(
-        "--noise_reduction",
+        "--denoise",
         action="store_true",
         help="Enable noise reduction on the audio",
     )
@@ -127,14 +136,16 @@ def parse_args():
     )
 
     os.makedirs(args.output_dir, exist_ok=True)
+    args.num_workers = min(args.num_workers, os.cpu_count())
 
     args.output_video = output_video_name_without_extension + extension
+    args.output_video_name_without_extension = output_video_name_without_extension
     if args.extract_slides:
         args.ocr_output = output_video_name_without_extension + "_ocr.json"
     if args.clone_voice:
-        if args.source_voice == None:
+        if args.source_voice is None:
             raise ValueError("Please provide a source voice for voice cloning")
-        args.transcript_output = output_video_name_without_extension + "_transcript.tsv"
+        args.transcript_output = output_video_name_without_extension + ".tsv"
 
     return args
 
@@ -207,38 +218,71 @@ def process_video(args):
         temp_audio_path = orig_audio_file.name
 
     input_audio_path = temp_audio_path  # Default to original if denoising is off
-    if args.noise_reduction:
+    if args.denoise:
         # Denoise audio
-        with NamedTemporaryFile(suffix=".wav", delete=False) as denoised_file:
-            logger.info("Denoising audio...")
-            info = sf.info(temp_audio_path)
-            denoiser = pyrnnoise.RNNoise(info.samplerate, info.channels)
+        denoised_audio_path = args.output_video_name_without_extension + "_denoised.wav"
+        if not os.path.exists(denoised_audio_path):
+            try:
+                with open(denoised_audio_path, "wb") as denoised_file:
+                    logger.info("Denoising audio...")
+                    info = sf.info(temp_audio_path)
+                    denoiser = pyrnnoise.RNNoise(info.samplerate, info.channels)
 
-            for _ in denoiser.process_wav(
-                temp_audio_path, denoised_file.name
-            ):  # it uses a generator
-                pass
-            denoised_audio_path = denoised_file.name
+                    for _ in denoiser.process_wav(
+                        temp_audio_path, denoised_file.name
+                    ):  # it uses a generator bruh
+                        pass
+                    denoised_audio_path = denoised_file.name
 
-            input_audio_path = denoised_audio_path
+                    input_audio_path = denoised_audio_path
+            except Exception as e:
+                logger.error(f"Error denoising audio: {e}")
+                input_audio_path = temp_audio_path
+                if os.path.exists(denoised_audio_path):
+                    os.unlink(denoised_audio_path)
+
     if args.clone_voice:
         # Use whisper to extract transcript
-
-        if not os.path.exists(
-            args.transcript_output
-        ):  # Check to see if transcript was already made
+        if not os.path.exists(args.transcript_output):
             from faster_whisper import WhisperModel
 
             model = WhisperModel(
-                "turbo", device="cuda" if torch.cuda.is_available() else "cpu"
+                "turbo",
+                device="cuda" if torch.cuda.is_available() else "cpu",
+                num_workers=args.num_workers,
             )
-            assert (
-                False
-            ), "TODO: implement whisper making the transcript and writingf it to the transcript output file as a tsv"
+            logger.info("Generating transcript using Whisper...")
+            segments, info = model.transcribe(
+                input_audio_path, language=TARGET_LANGUAGE, beam_size=5
+            )
+            with open(args.transcript_output, "w") as f:
+                f.write("start\tend\ttext\n")
+                for segment in segments:
+                    start_ms = int(segment.start * 1000)
+                    end_ms = int(segment.end * 1000)
+                    text = segment.text.strip()
+                    f.write(f"{start_ms}\t{end_ms}\t{text}\n")
+            logger.info(f"Transcript saved to {args.transcript_output}")
 
-        # TODO: Merge the clone_voice.py here and set the input_audio_path to the output audio path from clone_voice.py
+        # Generate cloned voice audio
+        audio_clonning_path = os.path.join(args.output_dir, "audio_clonning")
+        os.makedirs(audio_clonning_path, exist_ok=True)
+        cloned_audio_path = os.path.join(audio_clonning_path, "cloned_audio.mp3")
+        logger.info("Generating cloned voice audio...")
+        clone_voice(
+            tsv_path=args.transcript_output,
+            audio_path=args.source_voice,
+            output_path=cloned_audio_path,
+            ckpt_base="checkpoints/base_speakers/EN",
+            ckpt_converter="checkpoints/converter",
+            num_workers=args.num_workers,
+            encoded_message="MattHandzel",
+            use_vad=True,
+            target_speed=1.0,
+        )
+        input_audio_path = cloned_audio_path
 
-    # Load denoised/original audio for processing
+    # Load denoised/original/cloned audio for processing
     audio = AudioSegment.from_file(input_audio_path)
     logger.info(f"Loaded audio: {len(audio)/1000:.2f}s")
 
@@ -254,9 +298,12 @@ def process_video(args):
 
         # Add padding to silence regions
         silence_ranges = [
-            (max(0, start - args.padding), min(len(audio), end + args.padding))
+            (max(0, start + args.padding), min(len(audio), end - args.padding))
             for (start, end) in silence_ranges
         ]
+
+        # Ensure start of segment isn't less than end of segment
+        silence_ranges = [(start, end) for start, end in silence_ranges if start < end]
 
         # Create segments
         segments = []
@@ -314,8 +361,10 @@ def process_video(args):
 
             # Apply time stretching
             if seg_type == "silent":
-                stretched_float = librosa.effects.time_stretch(
-                    samples_float, rate=args.silent_speed
+                silent_volume = 0
+                stretched_float = (
+                    librosa.effects.time_stretch(samples_float, rate=args.silent_speed)
+                    * silent_volume
                 )
             else:
                 stretched_float = librosa.effects.time_stretch(
@@ -360,8 +409,12 @@ def process_video(args):
         logger.info(f"Audio duration {final_audio.duration}")
 
         logger.info(f"Writing output video to {args.output_video}...")
-        while os.path.exists(args.output_video):  # todo: improve this
-            args.output_video = args.output_video + "_1"
+        while (
+            os.path.exists(args.output_video) and not args.overwrite
+        ):  # todo: improve this
+            _path, _ext = os.path.splitext(args.output_video)
+
+            args.output_video = _path + "_1" + _ext
 
         final_video.write_videofile(
             args.output_video,
@@ -374,7 +427,7 @@ def process_video(args):
 
         # Cleanup temporary files
         os.unlink(temp_audio_path)
-        if args.noise_reduction:
+        if args.denoise:
             os.unlink(denoised_audio_path)
         os.unlink(processed_audio_path)
         video.close()

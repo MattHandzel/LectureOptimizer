@@ -4,8 +4,10 @@ This software was made because of a realization that teachers are not created eq
 
 ### Features
 - [ ] 30% faster lecture video *at the same speed*
+
     University lectures that are 1h20m long -> reduced to 50-55 minutes!
     With voice clonning, the lectures become ~50 minutes long, but they are much more understandable!
+
 - [x] Analyzes the lecture video and remove/speed up the silent parts inspired by the [jumpcutter](https://github.com/carykh/jumpcutter)
 - [x] Improves audio quality by denoising the audio
 - [ ] Pass in a link to download and process the video

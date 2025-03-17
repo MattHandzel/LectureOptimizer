@@ -16,4 +16,7 @@ checkpoints
 checkpoints*
 MeloTTS
 __pycache__
-
+transcripts/
+output/
+no_denoise
+input

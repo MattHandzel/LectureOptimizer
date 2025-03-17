@@ -17,6 +17,7 @@ import pytesseract
 from pytesseract import TesseractNotFoundError
 import torch
 from clone_voice import clone_voice
+import matplotlib.pyplot as plt
 
 
 # Setup logging
@@ -28,6 +29,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 TARGET_LANGUAGE = "en"
+
+MAX_VOLUME = 0.6
 
 
 def parse_args():
@@ -60,6 +63,18 @@ def parse_args():
         default=8.0,
         help="Speed factor for silent parts (default: 8)",
     )
+    parser.add_argument(
+        "--cut_silence",
+        action="store_true",
+        help="When flag is active the silent parts will be cutted out",
+    )
+    parser.add_argument(
+        "--normalize_audio",
+        type=float,
+        help="The audio level to be normalized in decibles",
+        default=None,
+    )
+
     parser.add_argument(
         "--min_silence_len",
         type=int,
@@ -197,6 +212,24 @@ def detect_slide_changes(video_path, threshold=0.1):
     return ocr_data
 
 
+def normalize_audio_segment(audio_segment, target_dBFS=-20.0):
+    """
+    Normalize the audio segment to a target dBFS or until it starts to clip, whichever is lower.
+
+    :param audio_segment: AudioSegment object to be normalized
+    :param target_dBFS: Target dBFS level to normalize to
+    :return: Normalized AudioSegment object
+    """
+    change_in_dBFS = target_dBFS - audio_segment.dBFS
+    normalized_audio = audio_segment.apply_gain(change_in_dBFS)
+
+    # Ensure no clipping
+    if normalized_audio.max_dBFS > 0:
+        normalized_audio = audio_segment.apply_gain(-audio_segment.max_dBFS)
+
+    return normalized_audio
+
+
 def process_video(args):
     """Main processing function"""
     # Check input file
@@ -212,15 +245,29 @@ def process_video(args):
     original_fps = video.fps  # Get original FPS
     logger.info(f"Loaded video: {original_duration:.2f}s duration, {original_fps} FPS")
 
+    # TODO: Normalize the audio levels
+    # TODO: Make it so the audio levels are roughly the same from timestamp to timestamp
     # Extract and save original audio
     with NamedTemporaryFile(suffix=".wav", delete=False) as orig_audio_file:
         video.audio.write_audiofile(orig_audio_file.name, logger=None)
         temp_audio_path = orig_audio_file.name
+    if args.normalize_audio:
+        # Normalize the audio volume levels
+
+        # Load audio
+        audio = AudioSegment.from_file(temp_audio_path)
+        audio = normalize_audio_segment(audio, target_dBFS=args.normalize_audio)
+        # Save normalized audio
+        with NamedTemporaryFile(suffix=".wav", delete=False) as normalized_audio_file:
+            audio.export(normalized_audio_file.name, format="wav")
+            temp_audio_path = normalized_audio_file.name
+        input_audio_path = temp_audio_path
 
     input_audio_path = temp_audio_path  # Default to original if denoising is off
     if args.denoise:
         # Denoise audio
         denoised_audio_path = args.output_video_name_without_extension + "_denoised.wav"
+        print(denoised_audio_path)
         if not os.path.exists(denoised_audio_path):
             try:
                 with open(denoised_audio_path, "wb") as denoised_file:
@@ -278,7 +325,7 @@ def process_video(args):
             num_workers=args.num_workers,
             encoded_message="MattHandzel",
             use_vad=True,
-            target_speed=1.0,
+            target_speed=1.2,
         )
         input_audio_path = cloned_audio_path
 
@@ -327,6 +374,8 @@ def process_video(args):
         )
 
         for seg_type, start, end in segments:
+            if args.cut_silence and seg_type == "silent":
+                continue
             start_sec = start / 1000.0
             end_sec = end / 1000.0
             assert start_sec < end_sec
@@ -376,6 +425,9 @@ def process_video(args):
                 stretched_float = stretched_float.T.reshape(-1)
             else:
                 stretched_float = stretched_float.flatten()
+
+            # Ensure the clip is not louder than the maximum volume
+            stretched_float = np.clip(stretched_float, -MAX_VOLUME, MAX_VOLUME)
 
             # Convert back to AudioSegment
             stretched_samples = (stretched_float * (2**15)).astype(np.int16)

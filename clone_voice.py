@@ -1,3 +1,7 @@
+"""
+This file uses the MeloTS model to clone a voice from a reference audio file and a transcript.
+"""
+
 import argparse
 import os
 import torch
@@ -51,7 +55,11 @@ def read_tsv(tsv_path):
             parts = line.strip().split("\t")
             if parts[0] == "start":
                 continue
+
+            if len(parts) == 2:
+                continue
             assert len(parts) == 3, f"Line {i+1} has {len(parts)} parts."
+
             if len(parts) == 3:
                 start = int(parts[0])
                 end = int(parts[1])

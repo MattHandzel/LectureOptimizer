@@ -2,7 +2,6 @@ import ollama
 
 OLLAMA_NUM_THREADS = 14
 
-
 def query_ollama(user_message, system_message, model_name="llama3.2"):
 
     response = ollama.chat(

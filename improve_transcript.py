@@ -1,19 +1,22 @@
-# This file will take in a transcript and improve it by using an LLM to do the following:
-# Remove text that is redundant or not useful
-# Ex. "or even microservices which is another buzzord that I did not define here" should be replaced with "or even microservices".
-# Improving the grammar and english ability of the speaker
-# Ex.
-# right
-# it's a very
-# open area
-# and there
-# is a very
-# there's a scarcity
-# of education
-# resources
-# in that area
-#  -Lectures are filled with rambling and non-concise passages.
-# Ex: This "So, today we are discussing cloud computing, which is this new buzzword that has been around for a few years. And so, we are going to try to unearth what cloud computing is all about. We will try to kind of sort of define the term cloud computing." Should be "Today, we're discussing cloud computing, a recent buzzword. We'll unearth what it's all about and attempt to define the term."
+"""
+This file will take in a transcript and improve it by using an LLM to do the following:
+- Remove text that is redundant or not useful
+    Ex. "or even microservices which is another buzzord that I did not define here" should be replaced with "or even microservices".
+- Improving the grammar and english ability of the speaker
+    Ex.
+    right
+    it's a very
+    open area
+    and there
+    is a very
+    there's a scarcity
+    of education
+    resources
+    in that area
+     -Lectures are filled with rambling and non-concise passages.
+    Ex: This "So, today we are discussing cloud computing, which is this new buzzword that has been around for a few years. And so, we are going to try to unearth what cloud computing is all about. We will try to kind of sort of define the term cloud computing." Should be "Today, we're discussing cloud computing, a recent buzzword. We'll unearth what it's all about and attempt to define the term."
+- Make transcript into larger segments so the voice cloner clones larger segments or audio to make the audio sound more cohesive
+"""
 
 import csv
 import argparse
@@ -289,12 +292,24 @@ def merge_transcript(segments, should_merge_function):
                 current["text"] += " " + seg["text"]
                 current["end"] = seg["end"]
             else:
-
                 merged.append(current)
                 current = seg
     if current is not None:
         merged.append(current)
     return merged
+
+
+def filter_transcript(segments):
+    filtered = []
+    for seg in segments:
+        # check to ensure there is letters or numbers in the seegment
+        if seg["text"] == ".":
+            continue
+        if seg["text"] == "":
+            continue
+        if seg["text"].strip():
+            filtered.append(seg)
+    return filtered
 
 
 parser = argparse.ArgumentParser(description="Improve a transcript.")
@@ -318,14 +333,18 @@ with open(args.input_transcript, "r") as f:
 # Process merging
 segments = split_on_periods(segments)
 improved_segments = merge_transcript(segments, merge_on_punctuation)
+improved_segments = filter_transcript(improved_segments)
 # improved_segments = merge_transcript(improved_segments, merge_on_semantics)
 #
-improved_segments = improve_transcript_with_llm_v2(improved_segments)
+# improved_segments = improve_transcript_with_llm_v2(improved_segments)
+
 
 # Output merged TSV
 print("start\tend\ttext")
 for seg in improved_segments:
     print(f"{seg['start']}\t{seg['end']}\t{seg['text']}")
+
+
 
 # write the new transcript to a file
 with open(args.output_transcript, "w") as f:

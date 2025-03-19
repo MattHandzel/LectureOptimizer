@@ -8,6 +8,8 @@ This software was made for people who are watching unedited, unpolished educatio
 
 **Original (45m55s)**:
 
+<video src="https://www.youtube.com/watch?v=2IdtqGM6KWU" controls="controls" style="max-width: 730px;"></video>
+
 [![Original Lecture 11 Video](https://img.youtube.com/vi/2IdtqGM6KWU/0.jpg)](https://www.youtube.com/watch?v=2IdtqGM6KWU)
 
 **Optimized (35m19s)**:

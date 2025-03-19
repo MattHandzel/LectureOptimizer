@@ -10,7 +10,8 @@ This software was made for people who are watching unedited, unpolished educatio
 
 [![Original Lecture 11 Video](https://img.youtube.com/vi/2IdtqGM6KWU/0.jpg)](https://www.youtube.com/watch?v=2IdtqGM6KWU)
 
-**Optimized (35m19ss)**:
+**Optimized (35m19s)**:
+
 [![Original Lecture 11 Video](https://img.youtube.com/vi/EtxPOWO6bgc/0.jpg)](https://youtu.be/EtxPOWO6bgc)
 
 My tool speeds up this lecture by ~23\%
@@ -25,7 +26,7 @@ Using [OpenVoice](https://github.com/myshell-ai/OpenVoice), it is possible to in
 
 Notice that the speed gain by voice cloning is much more than the original tool. The trade-off is that, on my machine, for every minute of video that uses voice cloning, it takes around 3-4 minutes to generate, so it cannot be done in real time 😭.
 
->  WARNING : Do not use the voice cloning tool on anyone without their permission. This is an example of voice cloning using my own voice.
+>  WARNING: Do not use the voice cloning tool on anyone without their permission. This is an example of voice cloning using my own voice.
 
 ### Features
 
@@ -55,7 +56,7 @@ The `optimize_lecture.py` script is the main entry point for the software. It ta
 
 Example:
 
-```
+```sh
 python optimize_lecture.py ./input/linear-algebra-lecture.mp4  --output_dir ./output/linear-algebra-lecture/ --speed_up --fps 30 --num_workers 15 --normal_speed 1 --silent_speed 10 --padding 250 --silence_threshold -48 --min_silence_len 750
 ```
 
@@ -65,7 +66,7 @@ This will take in the input lecture at `./input/linear-algebra-lecture.mp4` and 
 
 Here is an example of voice clonning:
 
-```
+```sh
 python optimize_lecture.py ./input/linear-algebra-lecture-short.mp4  --output_dir ./output/linear-algebra-lecture-short-voice-clone/ --speed_up --fps 30 --num_workers 15 --normal_speed 1 --silent_speed 10 --padding 250 --silence_threshold -52 --min_silence_len 750 --clone_voice --source_voice ./matts-voice.mp3 --transcript_output ./output/linear-algebra-lecture-short-voice-clone/linear-algebra-short.tsv
 ```
 

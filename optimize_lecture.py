@@ -16,7 +16,9 @@ import cv2
 import pytesseract
 from pytesseract import TesseractNotFoundError
 import torch
-from clone_voice import clone_voice
+
+global clone_voice
+clone_voice = None
 import matplotlib.pyplot as plt
 
 
@@ -145,6 +147,10 @@ def parse_args():
 
     args = parser.parse_args()
 
+    args.output_dir = (
+        args.output_dir + "/" if not args.output_dir.endswith("/") else args.output_dir
+    )
+
     video_name_without_extension, extension = os.path.splitext(args.input_video)
     output_video_name_without_extension = (
         args.output_dir + video_name_without_extension.split("/")[-1]
@@ -160,7 +166,13 @@ def parse_args():
     if args.clone_voice:
         if args.source_voice is None:
             raise ValueError("Please provide a source voice for voice cloning")
-        args.transcript_output = output_video_name_without_extension + ".tsv"
+        if not args.transcript_output:
+            # if transcript output was not specified then set it to the default
+            args.transcript_output = output_video_name_without_extension + ".tsv"
+
+    if args.clone_voice:
+        global clone_voice
+        from clone_voice import clone_voice
 
     return args
 
@@ -290,6 +302,8 @@ def process_video(args):
 
     if args.clone_voice:
         # Use whisper to extract transcript
+        print(args.transcript_output)
+        print(f"The path exists: {os.path.exists(args.transcript_output)}")
         if not os.path.exists(args.transcript_output):
             from faster_whisper import WhisperModel
 

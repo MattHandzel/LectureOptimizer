@@ -59,18 +59,20 @@ The `optimize_lecture.py` script is the main entry point for the software. It ta
 Example:
 
 ```sh
-python optimize_lecture.py ./input/linear-algebra-lecture.mp4  --output_dir ./output/linear-algebra-lecture/ --speed_up --fps 30 --num_workers 15 --normal_speed 1 --silent_speed 10 --padding 250 --silence_threshold -48 --min_silence_len 750
+python optimize_lecture.py https://www.youtube.com/watch?v=2IdtqGM6KWU  --output_dir ./output/linear-algebra-lecture/ --speed_up --fps 30 --num_workers 15 --normal_speed 1 --silent_speed 10 --padding 250 --silence_threshold -48 --min_silence_len 750
 ```
 
-This will take in the input lecture at `./input/linear-algebra-lecture.mp4` and output the processed lecture to `./output/linear-algebra-lecture/`. The video will be sped up so that the silent sections will be sped up by a factor of 10, and the non-silent sections will be sped up by a factor of 1. The video will be processed at 30 fps. When a silent section is detected, a padding of is 250ms will be used so consonants are not cut-off and the audio sounds better. The minimum silence length is 750ms and the silence threshold is -48db.
+This will download the input lecture at `https://www.youtube.com/watch?v=2IdtqGM6KWU` and output the processed lecture to `./output/linear-algebra-lecture/`. The video will be sped up so that the silent sections will be sped up by a factor of 10, and the non-silent sections will be sped up by a factor of 1. The video will be processed at 30 fps. When a silent section is detected, a padding of is 250ms will be used so consonants are not cut-off and the audio sounds better. The minimum silence length is 750ms and the silence threshold is -48db.
 
 #### Voice Cloning
 
 Here is an example of voice clonning:
 
 ```sh
-python optimize_lecture.py ./input/linear-algebra-lecture-short.mp4  --output_dir ./output/linear-algebra-lecture-short-voice-clone/ --speed_up --fps 30 --num_workers 15 --normal_speed 1 --silent_speed 10 --padding 250 --silence_threshold -52 --min_silence_len 750 --clone_voice --source_voice ./matts-voice.mp3 --transcript_output ./output/linear-algebra-lecture-short-voice-clone/linear-algebra-short.tsv
+python optimize_lecture.py https://mediaspace.illinois.edu/media/t/1_caaoyovw --cookies ~/Downloads/cookies.txt --output_dir ./output/cs425-lecture-13/ --speed_up --fps 30 --num_workers 15 --normal_speed 1 --silent_speed 10 --padding 250 --silence_threshold -52 --min_silence_len 750 --clone_voice --source_voice ./matts-voice.mp3 --transcript_output ./output/linear-algebra-lecture-short-voice-clone/linear-algebra-short.tsv
 ```
+
+This will download the lecture off of media space and run voice cloning on it. When downloading from a website that requires authentication, you can pass in a cookies file to authenticate. The source voice is the voice that will be cloned. The transcript output is the output of the transcript of the lecture. It will use whisper to create the transcript (this takes a long time) and it will use `num_workers` to speed up the process.
 
 #### todo
 

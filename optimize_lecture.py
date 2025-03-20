@@ -17,6 +17,7 @@ import pytesseract
 from pytesseract import TesseractNotFoundError
 import torch
 import yt_dlp
+from utils import normalize_look_alike_characters
 
 global clone_voice
 clone_voice = None
@@ -268,7 +269,7 @@ def is_url(url):
 
 
 def download_video_and_return_path(url, cookies=None):
-    ydl_opts = {}
+    ydl_opts = {"noplaylist": True, "no_chapters": True}
     if cookies:
         ydl_opts["cookiefile"] = cookies
 
@@ -277,14 +278,14 @@ def download_video_and_return_path(url, cookies=None):
         logger.info(f"Downloaded video: {youtube_info['title']}")
 
         # Try to get the filename from requested_downloads first
-        if youtube_info.get("requested_downloads"):
-            return youtube_info["requested_downloads"][0]["filename"]
-        else:
-            # Fallback to searching the directory if requested_downloads is not available
-            for file in os.listdir("."):
-                if youtube_info["title"] in file:
-                    return file
-            raise FileNotFoundError("Downloaded video not found")
+        # TODO: Improve this, there are prolly some edge cases here
+        for file in os.listdir("."):
+            print(youtube_info["title"], " | ", file)
+            if normalize_look_alike_characters(
+                youtube_info["title"]
+            ) in normalize_look_alike_characters(file):
+                return file
+        raise FileNotFoundError("Downloaded video not found")
 
 
 def process_video(args):
@@ -294,13 +295,14 @@ def process_video(args):
         args.input_video = download_video_and_return_path(
             args.input_video, args.cookies
         )
+    print("downloading from url", args.input_video)
 
     # Check input file
     if not os.path.isfile(args.input_video):
         raise FileNotFoundError(f"Input file {args.input_video} not found")
 
     # Load video
-    video = mpy.VideoFileClip(args.input_video)
+    video = mpy.VideoFileClip((args.input_video))
     if args.fps > 0:
         video = video.with_fps(args.fps)
 
@@ -401,6 +403,8 @@ def process_video(args):
     if args.speed_up:
         # Detect silence
         logger.info("Detecting silent regions...")
+
+        # TODO: Parallelize this
         silence_ranges = detect_silence(
             audio,
             min_silence_len=args.min_silence_len,
@@ -533,6 +537,7 @@ def process_video(args):
 
             args.output_video = _path + "_1" + _ext
 
+        # TODO: Parallelize this
         final_video.write_videofile(
             args.output_video,
             codec="libx264",

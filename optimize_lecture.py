@@ -16,6 +16,7 @@ import cv2
 import pytesseract
 from pytesseract import TesseractNotFoundError
 import torch
+import yt_dlp
 
 global clone_voice
 clone_voice = None
@@ -39,7 +40,9 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description="Process video by speeding up silent parts, denoising audio, generating transcript, and detecting slide changes with OCR."
     )
-    parser.add_argument("input_video", type=str, help="Path to the input video file")
+    parser.add_argument(
+        "input_video", type=str, help="Path to the input video file or URL"
+    )
     parser.add_argument(
         "--output_dir",
         type=str,
@@ -144,6 +147,9 @@ def parse_args():
     parser.add_argument(
         "--clone_voice", action="store_true", help="Enable voice cloning"
     )
+    parser.add_argument(
+        "--cookies", type=str, help="Path to cookies.txt for yt-dlp (if required)"
+    )
 
     args = parser.parse_args()
 
@@ -242,8 +248,53 @@ def normalize_audio_segment(audio_segment, target_dBFS=-20.0):
     return normalized_audio
 
 
+def is_youtube_url(url):
+    return (
+        "https://www.youtube.com/watch?v=" in url
+        or "https://youtu.be/" in url
+        or "https://www.youtube.com/playlist?list=" in url
+        or "https://www.youtube.com/channel/" in url
+        or "https://www.youtube.com/user/" in url
+        or "https://www.youtube.com/c/" in url
+    )
+
+
+def is_url(url):
+    # TODO: Make better
+    if "http://" in url or "https://" in url:
+        return True
+
+    return False
+
+
+def download_video_and_return_path(url, cookies=None):
+    ydl_opts = {}
+    if cookies:
+        ydl_opts["cookiefile"] = cookies
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        youtube_info = ydl.extract_info(url, download=True)
+        logger.info(f"Downloaded video: {youtube_info['title']}")
+
+        # Try to get the filename from requested_downloads first
+        if youtube_info.get("requested_downloads"):
+            return youtube_info["requested_downloads"][0]["filename"]
+        else:
+            # Fallback to searching the directory if requested_downloads is not available
+            for file in os.listdir("."):
+                if youtube_info["title"] in file:
+                    return file
+            raise FileNotFoundError("Downloaded video not found")
+
+
 def process_video(args):
     """Main processing function"""
+
+    if is_url(args.input_video):
+        args.input_video = download_video_and_return_path(
+            args.input_video, args.cookies
+        )
+
     # Check input file
     if not os.path.isfile(args.input_video):
         raise FileNotFoundError(f"Input file {args.input_video} not found")
@@ -477,7 +528,7 @@ def process_video(args):
         logger.info(f"Writing output video to {args.output_video}...")
         while (
             os.path.exists(args.output_video) and not args.overwrite
-        ):  # todo: improve this
+        ):  # TODO: improve this
             _path, _ext = os.path.splitext(args.output_video)
 
             args.output_video = _path + "_1" + _ext

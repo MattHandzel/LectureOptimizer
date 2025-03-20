@@ -3,13 +3,14 @@
 with pkgs;
   mkShell {
     buildInputs = with python312Packages;
-      [virtualenv qdrant-client python-dotenv flask openai-whisper ffmpeg-python yt-dlp pydub pyannote-audio opencv-python sentence-transformers scikit-learn numpy matplotlib tqdm soundfile librosa pytesseract torch torchvision tokenizers]
+      [virtualenv qdrant-client python-dotenv flask openai-whisper ffmpeg-python yt-dlp pydub pyannote-audio opencv-python sentence-transformers scikit-learn numpy matplotlib tqdm soundfile librosa pytesseract torch torchvision tokenizers yt-dlp]
       ++ [
         python312
         libgcc.lib
         mecab # needed for MeloTTS
         ollama
         python312Packages.ollama
+
 
         # docker
         # docker-compose

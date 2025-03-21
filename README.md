@@ -23,11 +23,12 @@ My tool speeds up this lecture by ~23\%
 
 Using [OpenVoice](https://github.com/myshell-ai/OpenVoice), it is possible to increase the audio quality and speed through voice cloning. Here is an example taking the first 10 minutes of the above lecture:
 
-**Clonned (5m33s)**:
+**Clonned (5m02s)**:
 
-https://github.com/user-attachments/assets/f618cdbd-cbdf-435b-b6da-3a606b36f38c
 
-Notice that the speed gain by voice cloning is much more than the original tool. The trade-off is that, on my machine, for every minute of video that uses voice cloning, it takes around 3-4 minutes to generate, so it cannot be done in real time 😭.
+https://github.com/user-attachments/assets/bfd4522c-4f17-4f00-b3a6-c248ff60ad91
+
+Notice that the speed gain by voice cloning is much more than the original tool. The trade-off is that, on my machine (which has no GPU), for every minute of video that uses voice cloning, it takes around 3-4 minutes to generate (most of it being the text to speed), so it cannot be done in real time 😭.
 
 >  WARNING: Do not use the voice cloning tool on anyone without their permission. This is an example of voice cloning using my own voice.
 

@@ -179,7 +179,7 @@ def parse_args():
 
     if args.clone_voice:
         global clone_voice
-        from clone_voice import clone_voice
+        import clone_voice
 
     return args
 
@@ -280,12 +280,112 @@ def download_video_and_return_path(url, cookies=None):
         # Try to get the filename from requested_downloads first
         # TODO: Improve this, there are prolly some edge cases here
         for file in os.listdir("."):
-            print(youtube_info["title"], " | ", file)
             if normalize_look_alike_characters(
                 youtube_info["title"]
             ) in normalize_look_alike_characters(file):
                 return file
         raise FileNotFoundError("Downloaded video not found")
+
+def align_video_with_clonned_voice(video, transcript, audio_clonning_dir, args):
+    # This code needs to be hell of a lot more readable
+    # TODO: This assumes that "converted_" is how to identify the clonned voice segments, which might not be ture, change this to variable
+    global clone_voice
+    # get all clonned voice segments into an array
+    clonned_voice_segments_paths = [path for path in os.listdir(audio_clonning_dir) if "converted_" in path and path.endswith(".wav")]
+    clonned_voice_segments_paths  = sorted(clonned_voice_segments_paths, key=lambda x: int(x.split("_")[-1].split(".")[0]))
+    clonned_voice_segments = [AudioSegment.from_file(os.path.join(audio_clonning_dir, path)) for path in clonned_voice_segments_paths]
+
+    original_segments = clone_voice.read_tsv(transcript)
+    assert len(original_segments) == len(clonned_voice_segments)
+
+    prev_end = 0
+    new_original_segments = []
+    segment_lengths = []
+    new_clonned_voice_segments = []
+    for (start, end, text), seg_len in zip(original_segments, [len(seg) for seg in clonned_voice_segments]):
+        if start != prev_end:
+            segment_lengths.append(start - prev_end)
+            new_original_segments.append((prev_end, start, ""))
+            new_clonned_voice_segments.append(None)
+        segment_lengths.append(seg_len)
+        new_original_segments.append((start, end, text))
+        new_clonned_voice_segments.append(clonned_voice_segments.pop(0))
+        prev_end = end
+
+    if prev_end < video.duration:
+        segment_lengths.append(video.duration - prev_end)
+        new_original_segments.append((prev_end, video.duration, ""))
+        new_clonned_voice_segments.append(None)
+
+
+    original_fps = video.fps
+    video_clips = []
+
+    old_start_to_new_start_map = {}
+    old_end_to_new_end_map = {}
+    # Extract the video when the clonned voice is speaking
+    for original_seg, new_seg_len in zip(new_original_segments, segment_lengths ):
+        old_start_to_new_start_map[original_seg[0]] = sum(segment_lengths[:new_original_segments.index(original_seg)])
+        old_end_to_new_end_map[original_seg[1]] = sum(segment_lengths[:new_original_segments.index(original_seg)]) + new_seg_len
+        start_sec, end_sec = int(original_seg[0] / 1000 * original_fps) / original_fps, int(original_seg[1]/1000 * original_fps) / original_fps
+        new_duration = new_seg_len / 1000
+
+        assert end_sec <= video.duration
+        assert start_sec < end_sec
+
+        clip = video.subclipped(start_sec, end_sec).with_duration(new_duration).with_fps(original_fps)
+
+
+        video_clips.append(clip)
+
+    frame_rate = [a for a in new_clonned_voice_segments if a != None][0].frame_rate
+    max_end = int(sum([clip.duration for clip in video_clips]) * 1000)
+    final_audio = AudioSegment.silent(max_end, frame_rate=frame_rate)
+
+    # Overlay the clonned voice segments, but 
+    for (start, _,_), audio in zip(new_original_segments, new_clonned_voice_segments):
+        if audio is None:
+            continue
+        final_audio = final_audio.overlay(audio, position=old_start_to_new_start_map[start])
+
+    final_audio.export("asdfasdfqwerasdfasfhahbajdsfahsdfasdfsdakfadsf.wav", format="mp3")
+    final_audio = mpy.AudioFileClip("asdfasdfqwerasdfasfhahbajdsfahsdfasdfsdakfadsf.wav") # TODO: I am being lazy
+
+    # Set processed audio to final video
+    final_video = mpy.concatenate_videoclips(video_clips).with_fps(original_fps)
+    final_video = final_video.with_audio(final_audio) # TODO: Maybe i could make it so it uses the original audio for when the voice is not clonned, and then use the clonned audio fro the cloned voice.
+    final_audio = AudioSegment.from_file("asdfasdfqwerasdfasfhahbajdsfahsdfasdfsdakfadsf.wav") # TODO: I am being lazy
+    os.unlink("asdfasdfqwerasdfasfhahbajdsfahsdfasdfsdakfadsf.wav")
+    
+
+    while (
+        os.path.exists(args.output_video) and not args.overwrite
+    ):  # TODO: improve this
+        _path, _ext = os.path.splitext(args.output_video)
+
+        args.output_video = _path + "_1" + _ext
+
+    with open(os.path.splitext(args.output_video)[0] + ".tsv", "w") as f:
+        f.write("start\tend\ttext\n")
+        for (start, end, text) in new_original_segments:
+            f.write(f"{old_start_to_new_start_map[start]}\t{old_end_to_new_end_map[end]}\t{text}\n")
+    return final_video, final_audio
+    # final_video.write_videofile(
+    #     args.output_video,
+    #     codec="libx264",
+    #     audio_codec="aac",
+    #     fps=original_fps,
+    #     preset="medium",
+    #     threads=args.num_workers,
+    # )
+
+    # create a new transcript based on these timestamps
+
+
+
+    exit()
+
+
 
 
 def process_video(args):
@@ -295,7 +395,6 @@ def process_video(args):
         args.input_video = download_video_and_return_path(
             args.input_video, args.cookies
         )
-    print("downloading from url", args.input_video)
 
     # Check input file
     if not os.path.isfile(args.input_video):
@@ -309,6 +408,7 @@ def process_video(args):
     original_duration = video.duration
     original_fps = video.fps  # Get original FPS
     logger.info(f"Loaded video: {original_duration:.2f}s duration, {original_fps} FPS")
+    audio = None
 
     # TODO: Normalize the audio levels
     # TODO: Make it so the audio levels are roughly the same from timestamp to timestamp
@@ -332,7 +432,6 @@ def process_video(args):
     if args.denoise:
         # Denoise audio
         denoised_audio_path = args.output_video_name_without_extension + "_denoised.wav"
-        print(denoised_audio_path)
         if not os.path.exists(denoised_audio_path):
             try:
                 with open(denoised_audio_path, "wb") as denoised_file:
@@ -355,8 +454,6 @@ def process_video(args):
 
     if args.clone_voice:
         # Use whisper to extract transcript
-        print(args.transcript_output)
-        print(f"The path exists: {os.path.exists(args.transcript_output)}")
         if not os.path.exists(args.transcript_output):
             from faster_whisper import WhisperModel
 
@@ -383,21 +480,29 @@ def process_video(args):
         os.makedirs(audio_clonning_path, exist_ok=True)
         cloned_audio_path = os.path.join(audio_clonning_path, "cloned_audio.mp3")
         logger.info("Generating cloned voice audio...")
-        clone_voice(
-            tsv_path=args.transcript_output,
-            audio_path=args.source_voice,
-            output_path=cloned_audio_path,
-            ckpt_base="checkpoints/base_speakers/EN",
-            ckpt_converter="checkpoints/converter",
-            num_workers=args.num_workers,
-            encoded_message="MattHandzel",
-            use_vad=True,
-            target_speed=1.2,
-        )
+        # if cloned_audio path exists then we already cloned the voice!
+        if os.path.exists(cloned_audio_path):
+            logger.info("There is already a cloned audio file, skipping voice cloning")
+        else:
+            clone_voice.clone_voice(
+                tsv_path=args.transcript_output,
+                audio_path=args.source_voice,
+                output_path=cloned_audio_path,
+                ckpt_base="checkpoints/base_speakers/EN",
+                ckpt_converter="checkpoints/converter",
+                num_workers=args.num_workers,
+                encoded_message="MattHandzel",
+                use_vad=True,
+                target_speed=1.2,
+            )
         input_audio_path = cloned_audio_path
 
+        video, audio = align_video_with_clonned_voice(video, args.transcript_output, audio_clonning_path, args)
+
+
     # Load denoised/original/cloned audio for processing
-    audio = AudioSegment.from_file(input_audio_path)
+    if audio == None:
+        audio = AudioSegment.from_file(input_audio_path)
     logger.info(f"Loaded audio: {len(audio)/1000:.2f}s")
 
     if args.speed_up:
@@ -544,7 +649,7 @@ def process_video(args):
             audio_codec="aac",
             fps=original_fps,
             preset="medium",
-            threads=4,
+            threads=args.num_workers,
         )
 
         # Cleanup temporary files

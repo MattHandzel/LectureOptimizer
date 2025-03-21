@@ -223,6 +223,8 @@ def clone_voice(
 
     final_audio.export(output_path, format="mp3")
 
+    return audio_segments
+
 
 def main():
     args = parse_args()

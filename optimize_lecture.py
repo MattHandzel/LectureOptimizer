@@ -370,20 +370,6 @@ def align_video_with_clonned_voice(video, transcript, audio_clonning_dir, args):
         for (start, end, text) in new_original_segments:
             f.write(f"{old_start_to_new_start_map[start]}\t{old_end_to_new_end_map[end]}\t{text}\n")
     return final_video, final_audio
-    # final_video.write_videofile(
-    #     args.output_video,
-    #     codec="libx264",
-    #     audio_codec="aac",
-    #     fps=original_fps,
-    #     preset="medium",
-    #     threads=args.num_workers,
-    # )
-
-    # create a new transcript based on these timestamps
-
-
-
-    exit()
 
 
 

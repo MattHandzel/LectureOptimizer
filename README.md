@@ -18,13 +18,11 @@ This software was made for people who are watching unedited, unpolished educatio
 
 My tool speeds up this lecture by ~23\%
 
-
 #### Voice Cloning 🤯
 
 Using [OpenVoice](https://github.com/myshell-ai/OpenVoice), it is possible to increase the audio quality and speed through voice cloning. Here is an example taking the first 10 minutes of the above lecture:
 
 **Clonned (5m02s)**:
-
 
 https://github.com/user-attachments/assets/bfd4522c-4f17-4f00-b3a6-c248ff60ad91
 
@@ -36,7 +34,7 @@ Notice that the speed gain by voice cloning is much more than the original tool.
 
 - [x] Analyzes the lecture video and remove/speed up the silent parts inspired by the [jumpcutter](https://github.com/carykh/jumpcutter)
 - [x] Improves audio quality by denoising the audio
-- [ ] Pass in a link to download and process the video
+- [x] Pass in a link to download and process the video
 - [x] Capability of transcribing the lecture to copy and paste into notes
 - [x] Implementing voice-clonning to reduce accents, standardize speaker cadence, improving understanding
 - [ ] Extract text from slides

@@ -4,12 +4,20 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    mach-nix.url = "github:DavHau/mach-nix";
+    mach-nix.url = "github:DavHau/mach-nix/3.2.0";
   };
 
   outputs = { self, nixpkgs, flake-utils, mach-nix }:
+
     flake-utils.lib.eachDefaultSystem (system:
       let
+        pkgs = import nixpkgs { inherit system; };
+        lib = pkgs.lib;
+        mach-nix = import (builtins.fetchGit {
+          url = "https://github.com/DavHau/mach-nix.git";
+          ref = "master";  # Or a specific branch/tag
+          rev = "";  # Replace with the latest commit hash
+        }) { inherit pkgs; };
         pkgs = import nixpkgs { inherit system; };
         lib = pkgs.lib;
 
@@ -61,7 +69,7 @@
         '';
 
         # Create Python environment with mach-nix
-        pythonEnv = (mach-nix.lib.${system}.mkPython {
+        pythonEnv = mach-nix.lib.${system}.mkPython {
           inherit requirements;
           providers = {
             # Use nixpkgs versions for better compatibility
@@ -71,7 +79,7 @@
             librosa = "nixpkgs";
           };
           _."pydub".extras = [ "pyaudioops" ];  # Example of adding extras
-        });
+        };
 
       in {
         # Buildable package
